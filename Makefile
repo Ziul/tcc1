@@ -22,7 +22,10 @@ EDITAVEIS_SOURCES = informacoes.tex errata.tex dedicatoria.tex \
 					elementosdotexto.tex elementosdopostexto.tex \
 					apendices.tex anexos.tex
 
-EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
+CONTEUDO_DIR = editaveis/conteudo
+CONTEUDO_SOURCES = principaisgerenciadores.tex
+
+EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES)) $(addprefix $(CONTEUDO_DIR)/, $(CONTEUDO_SOURCES))
 
 MAIN_FILE = tcc.tex
 DVI_FILE  = $(addsuffix .dvi, $(basename $(MAIN_FILE)))
