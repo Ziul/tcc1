@@ -1,4 +1,4 @@
-TARGET = TCC_FGA.pdf
+TARGET = Luiz_TCC.pdf
 
 BIBTEX = bibtex
 LATEX = latex
@@ -40,11 +40,12 @@ all:
 $(TARGET): $(MAIN_FILE) $(SOURCES) bibliografia.bib
 	$(LATEX) $(MAIN_FILE) $(SOURCES)
 	$(BIBTEX) $(AUX_FILE)
-	$(LATEX) $(MAIN_FILE) $(SOURCES)
-	$(LATEX) $(MAIN_FILE) $(SOURCES)
+	$(LATEX) $(MAIN_FILE) $(SOURCES)  -interaction=batchmode
+	$(LATEX) $(MAIN_FILE) $(SOURCES)  -interaction=batchmode
 	$(DVIPS) $(DVI_FILE)
 	$(PS2PDF) $(PS_FILE)
-	@cp $(PDF_FILE) $(TARGET)
+	@mv $(PDF_FILE) $(TARGET)
+	rm -f *~ *.dvi *.ps *.backup *.aux *.log
 
 clean:
 	rm -f *~ *.dvi *.ps *.backup *.aux *.log
