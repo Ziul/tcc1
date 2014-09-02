@@ -54,6 +54,23 @@ Portage (emerge)
 	emerge -s git
 
 
+Pacman
+----
+
+- Install
+
+	pacman -S git
+
+
+- Remove
+
+	pacman -Rc git
+
+
+- Search
+
+	pacman -Si git
+
 PKGng
 ----
 
@@ -70,3 +87,4 @@ PKGng
 - Search
 
 	pkg search git
+
