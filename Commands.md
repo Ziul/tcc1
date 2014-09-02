@@ -67,9 +67,10 @@ Pacman
 	pacman -Rc git
 
 
-- Search
+- Search*
 
 	pacman -Si git
+	pacman -Qi git  >> retorna pacote inexistente
 
 PKGng
 ----
