@@ -89,3 +89,22 @@ PKGng
 
 	pkg search git
 
+
+
+PKGng
+----
+
+- Install
+
+
+
+
+- Remove
+
+
+
+
+- Search
+
+
+

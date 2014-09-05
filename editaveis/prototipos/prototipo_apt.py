@@ -23,7 +23,12 @@ def test_install(package_name="git"):
     cache.update(progress.base.AcquireProgress())
     cache.open(progress.text.OpProgress())
 
-    pkg = cache[package_name]
+    try:
+        pkg = cache[package_name]
+    except KeyError, e:
+        print "{pkg_name}  not found".format(pkg_name=package_name)
+        return
+    
 
     if pkg.is_installed:
         print "{pkg_name} already installed".format(pkg_name=package_name)
@@ -53,4 +58,4 @@ def test_install(package_name="git"):
         print "Leaving"
 
 if __name__ == '__main__':
-    test_install('git')
+    test_install('gito')
