@@ -47,8 +47,17 @@ Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura
 
 \begin{itemize}
 	\item Instalar
+	\begin{lstlisting}
+	# apt-get install  <package>
+	\end{lstlisting}
 	\item Remover
+	\begin{lstlisting}
+	# apt-get purge  <package>
+	\end{lstlisting}
 	\item Procurar pacote
+	\begin{lstlisting}
+	# apt-cache search  <package>
+	\end{lstlisting}
 \end{itemize}
 
 
@@ -59,10 +68,18 @@ Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura
 
 \begin{itemize}
 	\item Instalar
+	\begin{lstlisting}
+	# yum install  <package>
+	\end{lstlisting}
 	\item Remover
+	\begin{lstlisting}
+	# yum purge  <package>
+	\end{lstlisting}
 	\item Procurar pacote
+	\begin{lstlisting}
+	# yum search  <package>
+	\end{lstlisting}
 \end{itemize}
-
 
 
 \subsection{Pacman} % (fold)
@@ -72,6 +89,37 @@ Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura
 
 \begin{itemize}
 	\item Instalar
+	\begin{lstlisting}
+	# pacman -S  <package>
+	\end{lstlisting}
 	\item Remover
+	\begin{lstlisting}
+	# pacman -Rc  <package>
+	\end{lstlisting}
+	\item Procurar pacote$^*$
+	\begin{lstlisting}
+	# pacman -Si  <package>
+	# pacman -Qi  <package>
+	\end{lstlisting}
+\end{itemize}
+
+
+\subsection{Zypper} % (Zypper)
+\label{sub:zypper}
+
+Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
+
+\begin{itemize}
+	\item Instalar
+	\begin{lstlisting}
+	# zypper install  <package>
+	\end{lstlisting}
+	\item Remover
+	\begin{lstlisting}
+	# zypper purge  <package>
+	\end{lstlisting}
 	\item Procurar pacote
+	\begin{lstlisting}
+	# zypper search  <package>
+	\end{lstlisting}
 \end{itemize}
