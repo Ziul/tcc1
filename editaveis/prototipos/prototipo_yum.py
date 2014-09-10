@@ -14,8 +14,34 @@ def test_install(package='git'):
         raise error
 
     yb=yum.YumBase()
-    yb.repos.doSetup()
-    pl = yb.doPackageLists(patterns=package)
+    try:
+        yb.repos.doSetup()
+    except IOError, e:
+        print "Missing privilegies or another root user aready [{err}]".format(
+                    err=str(arg))
+        raise e
+    matches = yb.searchGenerator(['name'],package)
+    for (package, matched_value) in matches :
+        if package.name == package : yb.install(package)
+    # pl = yb.doPackageLists()
+    # if pl.installed:
+    #     print "Installed Packages"
+    #     for pkg in sorted(pl.installed):
+    #         print pkg
+    # if (not pl.available) and (not pl.obsoletes):
+    #     print "Package %s not Available" % package
+    # if pl.available:
+    #     print "Available Packages"
+    #     for pkg in sorted(pl.available):
+    #         print pkg, pkg.repo
+    #     if raw_input("\nDo you want to continue? (y/n) ") == 'y':
+    #         try:
+    #             yb.install(package)
+    #         except yum.Errors.InstallError as arg:
+    #             print "Missing privilegies or another root user aready [{err}]".format(
+    #                 err=str(arg))
+    #             raise arg
+
 
 
 # yb = yum.YumBase()
@@ -49,4 +75,4 @@ def test_install(package='git'):
 
 
 if __name__ == '__main__':
-    test_install('gito')
+    test_install('git')
