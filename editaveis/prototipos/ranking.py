@@ -38,6 +38,23 @@ def Rankilist(pack):
 		ret.append(i)
 	return ret
 
+def Rankilist_hard(pack):
+	cache = Cache()
+	list_app = []
+	ret = []
+
+	for k in cache:
+		item = Pack()
+		item.name = k.name
+		peso = int(ratio(pack,k.name))*2
+		item.ratio = ratio(pack,k.name) + peso
+		list_app.append(item)
+
+	for i in sorted(list_app,key=lambda item: item.ratio,reverse=True):
+		ret.append(i)
+	return ret
+
+
 
 if __name__ == '__main__':
 	from sys import argv
@@ -50,5 +67,7 @@ if __name__ == '__main__':
 	# Perde a coerencia o resultado
 	#lista = Rankilist_r(':i386',lista,peso=0.0001)
 
+	if len(lista) <= 10:
+		lista = Rankilist_hard(argv[1])
 	for i in lista[:30]:
 		print i
