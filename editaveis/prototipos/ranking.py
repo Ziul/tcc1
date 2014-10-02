@@ -1,5 +1,8 @@
 from apt import Cache
 from Levenshtein import ratio
+import optparse
+#from multiprocessing import Pool
+from multiprocessing.pool import ThreadPool as Pool
 
 class Pack(object):
 	"""docstring for Pack"""
@@ -10,8 +13,7 @@ class Pack(object):
 	def __str__(self):
 		return self.name.ljust(50)  + "%.8f".rjust(6) %(self.ratio)
 
-import optparse
-from multiprocessing import Pool
+_MAX_PEERS = 4
 
 _parser = optparse.OptionParser(
 	usage= "Use with care",
@@ -46,32 +48,44 @@ _parser.add_option("--ratio",
                    default=0.0
                    )
 
+_parser.add_option("--multi",
+                   dest="single",
+                   action="store_true",
+                   help="Depraced",
+                   default=True
+                   )
 
-def ThreadRank(pack):
+
+def ThreadRank(k):
+	pack = _args[0]
 	item = Pack()
-	item.name = k.name
-	item.ratio = ratio(pack,k.name)
+	item.name = k
+	item.ratio = ratio(pack,k)
 	return item
 
 def Rankilist(cache,pack):
 	list_app = []
 
-	for k in cache:
-		#if pack in k.name:
-		item = Pack()
-		item.name = k.name
-		item.ratio = ratio(pack,k.name)
-		list_app.append(item)
-	return list_app
-	#_pool = Pool(processes=_MAX_PEERS)
-	#result = _pool.map(Threadlist, chapter_urls.items())
+	if _options.single:
+		for k in cache:
+			item = Pack()
+			item.name = k.name
+			item.ratio = ratio(pack,k.name)
+			list_app.append(item)
+		return list_app
+	else:
+		for k in cache:
+			list_app.append(k.name)
+		_pool = Pool(processes=_MAX_PEERS)
+		result = _pool.map(ThreadRank, list_app)
+		return result
 
 if __name__ == '__main__':
 	from sys import argv
 	(_options, _args) = _parser.parse_args()
 	package_name = _args[0]
 	cache = Cache()
-	suffixes = ['core','dev','commom']
+	suffixes = ['core','dev','commom','devel']
 	prefixes = ['lib']
 	lista = Rankilist(cache, package_name)
 	if _options.suffix:
