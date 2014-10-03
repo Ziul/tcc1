@@ -3,8 +3,6 @@ from apt import Cache
 from Levenshtein import ratio
 import optparse
 import time
-import asyncio
-# from multiprocessing import Pool
 from multiprocessing.pool import ThreadPool as Pool
 
 
@@ -29,6 +27,8 @@ class Pack(object):
         return self.ratio >= other.ratio
     def __ne__(self, other):
         return self.ratio != other.ratio
+    def __hash__(self):
+        return self.ratio
 
 _MAX_PEERS = 20
 
@@ -37,7 +37,6 @@ _parser = optparse.OptionParser(
     description="Search packages"
     )
 
-# quiet options
 _parser.add_option("--no-suffix",
                    dest="suffix",
                    action="store_false",
@@ -103,8 +102,6 @@ if __name__ == '__main__':
     prefixes = ['lib']
     agora = time.time()
 
-    # loop = asyncio.get_event_loop()
-    
     lista = Rankilist( package_name)
     if _options.suffix:
         for suffix in suffixes:
@@ -120,7 +117,10 @@ if __name__ == '__main__':
                 matches = Rankilist('{}{}-{}'.format(prefix,package_name,suffix))
                 lista.extend(matches)
 
+    # ultimo = time.time()
+    lista =list(set(lista))
+    lista = sorted(lista,reverse=True)
     ultimo = time.time()
-    print ultimo-agora
-    # for i in sorted(lista,reverse=True)[:_options.amount]:
-    #     print i
+    print "{} segundos".format(ultimo-agora)
+    for i in lista[:_options.amount]:
+        print i
