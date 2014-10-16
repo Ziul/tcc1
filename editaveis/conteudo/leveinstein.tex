@@ -1,9 +1,29 @@
 \section{Leveinstein} % (fold)
 \label{sec:leveinstein}
 
-Uma das aabordagens proposta neste trabalho são baseadas nos trabalhos de \textit{Vladimir Levenshtein} 
-\begin{verbatim}
-	Влади́мир Ио́сифович Левенште́йн
-\end{verbatim}. Nascido em 
+Uma das abordagens proposta neste trabalho são baseadas nos trabalhos de \textit{Vladimir Levenshtein}. Atuante na área de teoria da informação, código de correção de erros e design combinacional, Levenshtein publicou 1965 na [REVISTA] aquele que viria a ser o trabalho pelo qual seria reconhecido dês de então: \textit{Binary codes with correction of drooping and insertion of the symbol 1}\cite{levenshtein1965}. Republicado um resumo em 1966 com o titulo de \textit{Binary codes capable of correcting deletions, insertions and reversals}\cite{levenshtein1966}, a obra tratava do calculo da distância entre duas \textit{strings}, ou seja, dada as \textit{strings} \textbf{A} e \textbf{B} a quantidade mínima de operações necessárias para, partindo da \textit{string} \textbf{A}, seja possível chegar na \textit{string} \textbf{B}. Entende-se por operações a inserção, remoção e substituição de um carácter.
 
-% section leveinstein (end)
+\subsection{Exemplo de cálculo de distancia entre \textit{strings}} % (fold)
+\label{sub:exemplo_de_c_lculo_de_distancia_entre_it}
+
+Para uma maior compreensão do que se trata uma operação e distancia entre strings, tomemos como exemplos duas palavras, \textbf{cantar} e \textbf{dançar} e vamos proceder com algumas operações para, partindo da primeira, alcançar a segunda palavra.
+
+
+\begin{enumerate}[start=0]
+	\item cantar
+	\item dantar \textit{Substituição de 'c' por 'd'}
+	\item dançar \textit{Substituição de 't' por 'ç'}
+\end{enumerate}
+
+Como podemos observar, foram necessárias duas operações para alcançar \textbf{dançar}, sendo assim, a distância entre elas é $2$.
+É importante observar observar que, mesmo que duas letras iguais e consecutivas sejam substituídas por outras duas mesmas letras, serão creditadas duas operações, por exemplo as palavras \textbf{correr} e \textbf{Potter}:
+
+\begin{enumerate}[start=0]
+	\item correr
+	\item Porrer \textit{Substituição de 'c' por 'P'}
+	\item Potrer \textit{Substituição do primeiro 'r' por 't'}
+	\item Potter \textit{Substituição do segundo 'r' por 't'}
+\end{enumerate}
+
+Precisamos então de 3 operações para alcançar \textbf{Potter} partindo de \textbf{correr}. Toma-se do pressuposto que o algoritmo é \textit{case-sensitive} e sua ordenação é baseada na tabela \textit{ASCII}.
+

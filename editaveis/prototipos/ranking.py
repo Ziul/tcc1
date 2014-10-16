@@ -28,7 +28,11 @@ class Pack(object):
     def __ne__(self, other):
         return self.ratio != other.ratio
     def __hash__(self):
-        return self.ratio
+        # return self.ratio
+        return hash(self.__str__())
+    def __len__(self):
+        return len(self.name)
+
 
 _MAX_PEERS = 20
 

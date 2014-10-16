@@ -50,7 +50,7 @@ endif # $J
 
 .PHONY: all clean dist-clean
 
-all: 
+all: clean
 	@echo "Using" $(NPROCS) "jobs"
 	@make $(TARGET) -j$(NPROCS)
 	pdfinfo $(TARGET)
