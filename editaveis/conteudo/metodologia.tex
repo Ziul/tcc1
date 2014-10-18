@@ -1,0 +1,40 @@
+\section{Metodologia} % (fold)
+\label{sec:metodologia}
+
+% - Levantamento de hipoteses
+% - Levantamento de algoritmos de comparação de strings
+% - Desenvolvimento de prototipos para os algoritmos selecionados
+% - Comparação de resultado dos métodos
+% 	# Gerar tabelas
+% 	# Gerar gráficos
+% 	- apt-cache
+% 	- exact match
+% 	- leveinsthein
+% 	- align
+
+\subsection{Visualização do problema} % (fold)
+\label{sub:visualiza_o_do_problema}
+
+Dentre os diversos gerenciadores de pacotes utilizados atualmente para a instalação de pacotes em distribuições Linux, podemos apontar alguns que se destacam por virem já instalados de padrão nas distribuições mais comuns hoje. São eles:
+
+\begin{enumerate}
+	\item Apt
+	\begin{itemize}
+		\item Gerenciador amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}). Provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
+	\end{itemize}
+	\item Yum
+	\begin{itemize}
+		\item Gerenciador padrão  das distribuições oriundas da \textbf{RedHat}, como o \textbf{Fedora} e \textbf{CentOS}.
+	\end{itemize}
+	\item Portage
+	\begin{itemize}
+		\item Gerenciador padrão da distribuição Gentoo e suas ramificações.
+	\end{itemize}
+	\item Pacman
+	\begin{itemize}
+		\item Dentre os gerenciadores de pacotes, é provalmente o mais recente dentre os mais comuns. Como não poderia deixar de ser, é  o gerenciador de pacotes de uma ramificação recente dentre distribuições Linux que vem conseguindo ganhar seu espaço entre distribuições mais tradicionais, a \textbf{Arch}, lançada em março de 2002.
+	\end{itemize}
+\end{enumerate}
+
+Porém, todos estes gerenciadores possuem um problema em comum. A apresentação de resultados de busca não é personalizavel, permitindo classificar a listagem de pacotes por nome por exemplo, nem fazem \textit{matching} de aproximação  entre o pacote pesquisado e os possiveis candidatos.
+
