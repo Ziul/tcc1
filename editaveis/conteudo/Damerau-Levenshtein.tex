@@ -1,5 +1,49 @@
 \section{Damerau-Levenshtein} % (fold)
 \label{sec:damerau_levenshtein}
 
+A distancia de Damerau-Levenshtein é uma variação da distancia de Levenshtein\cite{levenshtein1965}, havendo ainda a implementação da transposição no \textit{set} de operações básicas.
+
+Por permitir a restrição de um universo de palavras e considerar apenas a transposição de caracteres, a distância de \textit{Damerau-Levenshtein} abriu portas para um novo padrão de métricas, as biológicas, no campo de mensurar a variação entre moléculas de DNA. Esta seria a brecha necessária para que surgissem outros métodos de analise de moléculas de DNA baseadas em comparamento de strings, tais como o algoritmo de \textit{Needleman–Wunsch}\cite{needleman1970general} e ate mesmo o de \textit{Smith-Waterman}\cite{smith1981identification}, apresentado neste trabalho na sessão \ref{sec:smith_waterman}.
+
+\subsection{Implementação do Damerau-Levenshtein} % (fold)
+\label{sub:implementa_o_do_damerau_levenshtein}
+
+Para melhor contextualização da diferença entre o método tradicional de calculo de distância e o modelo de \textit{Damerau-Levenshtein}, consideremos a seguir uma visão atômica de como seria o procedimento de câlculo.
+
+\begin{lstlisting}[language=Python,label=levenshtein_distance_py,caption={Visão atômica do cálculo da distância de Levenshtein}]
+def levenshtein_distance(s1, s2):
+    lenstr1 = len(s1)
+    lenstr2 = len(s2)
+    d = initialize_distance(lenstr1,lenstr2)
+
+	d = calculate_distance(lenstr1,lenstr2,d) 
+
+    return d[lenstr1-1,lenstr2-1]
+\end{lstlisting}
+
+O código \ref{levenshtein_distance_py} serviria tanto para o modelo tradicional como para o de \textit{Damerau-Levenshtein}, necessitando apenas implementar o método \textit{calculate\_distance} de forma distinta. O trecho abaixo representa como seria sua implementação para o modelo de \textit{Damerau-Levenshtein}.
+
+\begin{lstlisting}[language=Python,label=damerau_levenshtein_distance_py,caption={Implementação da distância de Damerau-Levenshtein}]
+def calculate_distance(lenstr1,lenstr2,d):
+    for i in xrange(lenstr1):
+        for j in xrange(lenstr2):
+            if s1[i] == s2[j]:
+                cost = 0
+            else:
+                cost = 1
+            d[(i,j)] = min(
+                           d[(i-1,j)] + 1, # deletion
+                           d[(i,j-1)] + 1, # insertion
+                           d[(i-1,j-1)] + cost, # substitution
+                          )
+            if i and j and s1[i]==s2[j-1] and s1[i-1] == s2[j]:
+                d[(i,j)] = min (d[(i,j)], d[i-2,j-2] + cost) # transposition
+ 
+    return d
+\end{lstlisting}
+
+A distinção do método de \textit{Damerau-Levenshtein} para o modelo tradicional é apenas a inserção das linhas \textbf{13} e \textbf{14} no código \ref{damerau_levenshtein_distance_py}.
+
+% subsection implementa_o_do_damerau_levenshtein (end)
 %http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance
 % section damerau_levenshtein (end)
