@@ -52,3 +52,24 @@ O \textit{APT} possui como repositório oficial o \url{git://anonscm.debian.org/
 \end{enumerate}
 
 Mais informações sobre como é o processo \textit{default} de ordenação do \textit{APT} será descrito no capitulo \ref{cha:apt}.
+
+
+\section{Métodos alternativos de ordenação} % (fold)
+\label{sec:m_todos_alternativos_de_ordena_o}
+
+No intuito de apresentar alternativas de ordenação de pacotes à atual situação, foram verificadas algoritmos de comparação de strings baseados em artigos de ordenação, classificação e seleção.
+
+Dentre os algoritmos encontrados, destacaram-se:
+
+\begin{itemize}
+	\item \textbf{Levenshtein}\\
+	Trata do calculo da distância entre duas \textit{strings}. Será visto mais detalhadamente na sessão \ref{sec:leveinstein} deste documento.
+%
+	\item \textbf{Damerau-Levenshtein}\\
+	Variação do método de Levenshtein, a distância de Damerau-Levenshtein consegue abordar alguns pontos de aproximação, como desordem de caracteres. Será visto mais detalhadamente na sessão \ref{sec:damerau_levenshtein} deste documento.
+%
+	\item \textbf{Smith-Waterman}\\
+	Algoritmo de alinhamento de caracteres para determinação de regiões semelhantes entre duas \textit{strings}. Será visto mais detalhadamente na sessão \ref{sec:smith_waterman} deste documento.
+
+\end{itemize}
+% section m_todos_alternativos_de_ordena_o (end)

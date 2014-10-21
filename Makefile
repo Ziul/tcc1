@@ -20,7 +20,9 @@ EDITAVEIS_SOURCES = abreviaturas.tex agradecimentos.tex apendices.tex \
 	      			errata.tex introducao.tex resumo.tex textoepostexto.tex\
 					abstract.tex anexos.tex aspectosgerais.tex elementosdopostexto.tex\
 					epigrafe.tex informacoes.tex simbolos.tex \
-					conteudo/leveinstein.tex conteudo/principaisgerenciadores.tex
+					conteudo/levenshtein.tex conteudo/principaisgerenciadores.tex\
+					conteudo/Damerau-Levenshtein.tex conteudo/Smith-Waterman.tex
+#$(wildcard *.tex)
 
 EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
 
