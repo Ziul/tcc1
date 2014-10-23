@@ -27,3 +27,35 @@ Como podemos observar, foram necessárias duas operações para alcançar \textb
 
 Precisamos então de 3 operações para alcançar \textbf{Potter} partindo de \textbf{correr}. Toma-se do pressuposto que o algoritmo é \textit{case-sensitive} e sua ordenação é baseada na tabela \textit{ASCII}.
 
+\subsection{Algoritmo da distancia} % (fold)
+\label{sub:algoritmo_da_distancia}
+
+Nos trabalhos de Levenshtein em em 1965 e 1966, são apesentados apenas as possibilidades de localização do caractere perdido, ou do bit perdido na sequencia binaria, porém, tamanha descrição apresentada para a identificação do caractere apresentada no trabalho de 1966\cite{levenshtein1966} possibilitaram a implementação do algoritmo no decorrer da historia, tendo uma das sua representações a seguinte forma:
+
+
+\begin{lstlisting}[language=Python,label=damerau_levenshtein_distance_py,caption={Implementação da distância de Levenshtein}]
+def calculate_distance(s1,s2):
+    d = {}
+    lenstr1 = len(s1)
+    lenstr2 = len(s2)
+    for i in xrange(-1,lenstr1+1):
+        d[(i,-1)] = i+1
+    for j in xrange(-1,lenstr2+1):
+        d[(-1,j)] = j+1
+ 
+    for i in xrange(lenstr1):
+        for j in xrange(lenstr2):
+            if s1[i] == s2[j]:
+                cost = 0
+            else:
+                cost = 1
+            d[(i,j)] = min(
+                           d[(i-1,j)] + 1, # deletion
+                           d[(i,j-1)] + 1, # insertion
+                           d[(i-1,j-1)] + cost, # substitution
+                          )
+
+    return d[lenstr1-1,lenstr2-1]
+\end{lstlisting}
+
+Como pode-se observar,  o calculo da distancia é realizado em cima de operações com uma matriz de distancias. Isso possibilitou a evolução das validações de distancias com a paralelização das operações com uso de de GPU ou FPGA, obtendo-se ganhos de operações nas casas de centenas.
