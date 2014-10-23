@@ -1,0 +1,118 @@
+\chapter{Gerenciadores de pacotes} % (fold)
+\label{sec:distribui_es_abordadas}
+
+\section{Contextualização} % (fold)
+\label{sec:breve_descri_o}
+
+Dês do lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizados por completo, surgindo, apresentando e amadurecendo sua filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente das principais distribuições hoje no mercado: \textit{Debian, Red Hat, Slackware} ou \textit{Arch}
+% Adicionar a Gentoo dentre as principais distribuições?
+
+Em sistemas operacionais Linux, a muito foi definido uma padronização para distribuições de aplicações para o sistemas, chamados pacotes. A filosofia por trás da comunidade livre e o interesse em buscar novas formas de armazenamento e distribuição de pacotes fez com que surgissem diversos \textit{gerenciadores de pacotes}, especializados para cada distribuição.
+
+Devido grande parte das distribuições hoje existentes serem ramificações das distribuições \textit{Debian, Red Hat, Slackware} ou \textit{Arch},os diversos gerenciadores de pacotes hoje disponíveis também possuem muitas similaridades entre eles.
+Estas distribuições representam o berço de grande parte das distribuições existentes hoje. Assim, este trabalho buscará apresentar resultados que possam ser facilmente convertido para os demais gerenciadores, sempre visando a maior compatibilidade possível com o maior número de distribuições disponíveis.
+
+\section{Candidatos para estudo} % (fold)
+\label{sec:candidatos_para_estudo}
+
+Tendo em vista que este trabalho busca apresentar melhores soluções para a ordenação de pacotes na resposta recebida em uma pesquisa realizada em um gerenciador de pacotes, devemos inicialmente estudar os possíveis candidatos a ser estudado no trabalho.
+Desta forma, os gerenciadores de pacotes que serão levados em consideração neste trabalho serão:
+
+\begin{enumerate}
+	\item Apt\\
+		Gerenciador amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}). Provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
+	\item Yum\\
+		Gerenciador padrão  das distribuições oriundas da \textbf{RedHat}, como o \textbf{Fedora} e \textbf{CentOS}.
+	\item Portage\\
+		Gerenciador padrão da distribuição \textbf{Gentoo} e suas ramificações. Escrito em \textit{Python} e \textit{Bash}, normalmente o gerenciador é utilizado através da ferramenta \textit{emerge}.
+	\item Pacman\\
+		Dentre os gerenciadores de pacotes, é provavelmente o mais recente dentre os mais comuns. Como não poderia deixar de ser, é  o gerenciador de pacotes de uma ramificação recente dentre distribuições Linux que vem conseguindo ganhar seu espaço entre distribuições mais tradicionais, a \textbf{Arch}, lançada em março de 2002.
+\end{enumerate}
+
+\subsection{Comandos Básicos} % (fold)
+\label{sec:comandos_b_sicos}
+
+
+\subsubsection{Apt} % (fold)
+\label{sub:apt}
+
+Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
+
+\begin{itemize}
+	\item Instalar
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# apt-get install  <package>
+	\end{lstlisting}
+	\item Remover
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# apt-get purge  <package>
+	\end{lstlisting}
+	\item Procurar pacote
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# apt-cache search  <package>
+	\end{lstlisting}
+\end{itemize}
+
+
+\subsubsection{Yum} % (fold)
+\label{sub:yum}
+
+Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
+
+\begin{itemize}
+	\item Instalar
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# yum install  <package>
+	\end{lstlisting}
+	\item Remover
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# yum purge  <package>
+	\end{lstlisting}
+	\item Procurar pacote
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# yum search  <package>
+	\end{lstlisting}
+\end{itemize}
+
+
+\subsubsection{Pacman} % (fold)
+\label{sub:pacan}
+
+Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
+
+\begin{itemize}
+	\item Instalar
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# pacman -S  <package>
+	\end{lstlisting}
+	\item Remover
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# pacman -Rc  <package>
+	\end{lstlisting}
+	\item Procurar pacote$^*$
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# pacman -Si  <package>
+	# pacman -Qi  <package>
+	\end{lstlisting}
+\end{itemize}
+
+
+\subsubsection{Zypper} % (Zypper)
+\label{sub:zypper}
+
+Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
+
+\begin{itemize}
+	\item Instalar
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# zypper install  <package>
+	\end{lstlisting}
+	\item Remover
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# zypper purge  <package>
+	\end{lstlisting}
+	\item Procurar pacote
+	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+	# zypper search  <package>
+	\end{lstlisting}
+\end{itemize}

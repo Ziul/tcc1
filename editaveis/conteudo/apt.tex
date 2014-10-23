@@ -1,8 +1,18 @@
-\chapter{APT} % (fold)
-\label{cha:apt}
+\section{APT} % (fold)
+\label{sec:apt}
+
+\subsection{Sobre o apt-cache} % (fold)
+\label{sub:sobre_o_apt_cache}
+
+% section sobre_o_apt_cache (end)
+
+\subsection{Funcionalidade do apt-cache} % (fold)
+\label{sub:funcionalidade_do_apt_cache}
+
 
 Como introduzido em \ref{sub:visualiza_o_do_problema}, o \textit{APT} possui como repositório oficial o \url{git://anonscm.debian.org/apt/apt.git}, apesar de também ser hospedado em outros repositórios, tal como o \url{https://github.com/Debian/apt}. Uma observação mais atenta no \href{https://github.com/Debian/apt/blob/debian/experimental/cmdline/apt-cache.cc}{apt-cache.cc}, disponibilizado no repositório nos esclarece como o \textit{apt-cache} procede na ordenação dos pacotes para impressão.
 
-\begin{lstlisting}[language=C++]
-LocalitySort(&DFList->Df,Cache->HeaderP->GroupCount,sizeof(*DFList));
-\end{lstlisting}
+%\begin{lstlisting}[language=C++]
+%LocalitySort(&DFList->Df,Cache->HeaderP->GroupCount,sizeof(*DFList));
+%\end{lstlisting}
+
