@@ -13,7 +13,7 @@ class Pack(object):
     def __init__(self):
         super(Pack, self).__init__()
     def __str__(self):
-        return self.name.ljust(50)  + "%.8f".rjust(6) %(self.ratio)
+        return self.name.ljust(50)  +' ' + str(self.ratio)
 
     def __gt__(self,other):
         return self.ratio > other.ratio
