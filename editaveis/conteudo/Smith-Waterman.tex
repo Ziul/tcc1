@@ -4,4 +4,32 @@
 
 Proposto em 1981 por \textit{Temple F. Smith} e \textit{Michael S. Waterman}\cite{smith1981identification} com o intuito de localização de sequencias moleculares semelhantes, este algoritmo de programação dinâmica é hoje amplamente utilizado para a localização de regiões similares entre \textit{strings} e nas sequências de proteínas ou nucleotídeos.
 
+O algoritmo trabalha com o alinhamento de \textit{strings} no intuito de  buscar a maior semelhança entre elas. Considerando este fator, é interessante que as duas \textit{strings} contenham uma quantidade de caracteres igual ou próxima, visto que  a \textit{string} com  maior quantidade de caracteres provavelmente terá suas bordas ignoradas no final. Como resultado, podemos obter melhores resultados com comparações de \textit{strings} que os algoritmos de Leveinstein quando tratamos de busca por radicais. Todavia uma comparação usando palavras com alta distinção de quantidade de caracteres poderá resultar em uma perca de desempenho pela necessidade de permutações necessárias para localizar o melhor alinhamento.
+
 % Explanação em http://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
+\subsection{Algoritmo} % (fold)
+\label{sub:algoritmo}
+
+Considerando as \textit{strings} $a$ e $b$ de tamanhos $m,n$ respectivamente, é montada uma matrix $H$ de acordo com as seguintes regras:
+
+\begin{align*}
+	H(i,0) =& 0, 0 \leq i \leq m \\
+	H(0,j) =& 0, 0 \leq j \leq n \\
+	H(i,j) =& \text{max}
+	\begin{Bmatrix}
+		0  &\\
+		H(i-1,j-1) + s(a_i,b_j) & \text{Correspondências}\\
+		\underset{k\geq1}{\text{max}} \left\{H(i-k,j) + W_k\right\} & \text{Remoções}\\
+		\underset{l\geq1}{\text{max}} \left\{H(i,j-l) + W_l\right\} & \text{Inserções}
+	\end{Bmatrix}, 1 \leq i \leq m, 1 \leq j \leq n
+\end{align*}
+
+Sendo:
+\begin{itemize}
+	\item $s(a,b)$: a função de similaridade do alfabeto
+	\item $W_i$: a nota de lacuna\footnote{Também conhecida como \textit{gap-scoring} ou \textit{gap-penalty}.}
+\end{itemize}
+
+Montada a matriz $H$, para obter o melhor alinhamento, o algoritmo dita começar com o maior valor na matriz $(i,j)$, vá então retornando em sentido a celula $(0,0)$, sendo por $(i - 1,j), (i, j - 1)$, ou $(i - 1, j - 1)$ de acordo com 
+
+%To obtain the optimum local alignment, start with the highest value in the matrix (i,j). Then, go backwards to one of positions (i - 1,j), (i, j - 1), and (i - 1, j - 1) depending on the direction of movement used to construct the matrix. This methodology is maintained until a matrix cell with zero value is reached.
