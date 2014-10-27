@@ -53,4 +53,27 @@ Dentre os algoritmos de comparação de \textit{strings}, serão abordados os se
 	Algoritmo de alinhamento de caracteres para determinação de regiões semelhantes entre duas \textit{strings}. Será visto mais detalhadamente na sessão \ref{sec:smith_waterman} deste documento.
 
 \end{itemize}
+
+\subsection{Implementação dos algoritmos} % (fold)
+\label{sub:implementa_o_dos_algoritmos}
+
+A primeiro momento, este trabalho tem como objetivo a apresentação de modelos distintos de ordenação no intuito de evidenciar a carência dos gerenciadores de pacotes atuais em apresentação de resultados de pesquisa por pacotes. Consciente do objetivo deste trabalho, será evitado o desenvolvimento dos códigos de algoritmo de ordenação, visto que o objetivo não é a implementação dos algoritmos, mas a comparação dos resultados obtidos através dos algoritmos de ordenação e suas performances nos estados atuais de implementação. Assim, serão utilizadas bibliotecas já implementadas dos algoritmos de ordenação, citando suas respectivas referências e créditos.
+
+Para uma simplificação dos objetivos, foi adotada a linguagem \textit{Python} por apresentar uma interface de interação com o gerenciador de pacote escolhido para uso neste trabalho, \nameref{sec:apt}. Partindo deste ponto, foram localizados algoritmos de ordenação de \textit{strings} disponibilizados no \href{https://pypi.python.org/}{PyPI}.
+
+Foram selecionados então os seguintes algoritmos:
+
+\begin{itemize}
+	\item \href{https://pypi.python.org/pypi/swalign/}{swalign}\\
+	Pacote que oferece o algoritmo de ordenação de \textit{Smith-Waterman}. Utilizada a versão $0.3.1$.
+	\item \href{https://pypi.python.org/pypi/python-Levenshtein/}{python-Levenshtein}\\
+	Pacote que oferece o algoritmo de ordenação de \textit{Levenshtein}.Utilizada a versão $0.11.2$.
+	\item \href{https://pypi.python.org/pypi/pyxDamerauLevenshtein/}{pyxDamerauLevenshtein}\\
+	Pacote que oferece o algoritmo de ordenação de \textit{Damerau-Levenshtein}. Utilizada a versão $1.2$.
+\end{itemize}
+
+Também foi utilizado o algoritmo de \textit{match} exato, o qual se idealiza na necessidade de ter a \textit{string} procurada presente no nome do pacote. Esta busca já é implementada no processo de \textit{search} do APT, porém ela aparece em segundo patamar de ordenação. Assim, foi implementado também um método de ordenação baseada apenas no \textit{match} exato  da \textit{string} de entrada pelo nome do pacote.
+
+% subsection implementa_o_dos_algoritmos (end)
+
 % section m_todos_alternativos_de_ordena_o (end)
