@@ -1,9 +1,9 @@
-\section{Levenshtein} % (fold)
+\subsection{Levenshtein} % (fold)
 \label{sec:leveinstein}
 
-Uma das abordagens proposta neste trabalho são baseadas nos trabalhos de \textit{Vladimir Levenshtein}. Atuante na área de teoria da informação, código de correção de erros e design combinacional, Levenshtein publicou 1965 na [REVISTA] aquele que viria a ser o trabalho pelo qual seria reconhecido dês de então: \textit{Binary codes with correction of drooping and insertion of the symbol 1}\cite{levenshtein1965}. Republicado um resumo em 1966 com o titulo de \textit{Binary codes capable of correcting deletions, insertions and reversals}\cite{levenshtein1966}, a obra tratava do calculo da distância entre duas \textit{strings}, ou seja, dada as \textit{strings} \textbf{A} e \textbf{B} a quantidade mínima de operações necessárias para, partindo da \textit{string} \textbf{A}, seja possível chegar na \textit{string} \textbf{B}. Entende-se por operações a inserção, remoção e substituição de um carácter.
+Uma das abordagens proposta neste trabalho são baseadas nos trabalhos de \textit{Vladimir Levenshtein}. Atuante na área de teoria da informação, código de correção de erros e design combinacional, Levenshtein publicou 1965 na [REVISTA] aquele que viria a ser o trabalho pelo qual seria reconhecido dês de então: \textit{Binary codes with correction of drooping and insertion of the symbol 1}\cite{levenshtein1965}. Republicado um resumo em 1966 com o titulo de \textit{Binary codes capable of correcting deletions, insertions and reversals}\cite{levenshtein1966}, a obra tratava do calculo da distância entre duas \textit{strings}, ou seja, dada as \textit{strings} \textbf{A} e \textbf{B} a quantidade mínima de operações necessárias para, partindo da \textit{string} \textbf{A}, seja possível chegar na \textit{string} \textbf{B}. Entende-se por operações a inserção, remoção e substituição de um caractere.
 
-\subsection{Exemplo de cálculo de distancia entre \textit{strings}} % (fold)
+\subsubsection{Exemplo de cálculo de distancia entre \textit{strings}} % (fold)
 \label{sub:exemplo_de_c_lculo_de_distancia_entre_it}
 
 Para uma maior compreensão do que se trata uma operação e distancia entre strings, tomemos como exemplos duas palavras, \textbf{cantar} e \textbf{dançar} e vamos proceder com algumas operações para, partindo da primeira, alcançar a segunda palavra.
@@ -27,12 +27,12 @@ Como podemos observar, foram necessárias duas operações para alcançar \textb
 
 Precisamos então de 3 operações para alcançar \textbf{Potter} partindo de \textbf{correr}. Toma-se do pressuposto que o algoritmo é \textit{case-sensitive} e sua ordenação é baseada na tabela \textit{ASCII}.
 
-\subsection{Algoritmo da distancia} % (fold)
+\subsubsection{Distância de Levenshtein}
 \label{sub:algoritmo_da_distancia}
 
 Nos trabalhos de Levenshtein em em 1965 e 1966, são apesentados apenas as possibilidades de localização do caractere perdido, ou do bit perdido na sequencia binaria, porém, tamanha descrição apresentada para a identificação do caractere apresentada no trabalho de 1966\cite{levenshtein1966} possibilitaram a implementação do algoritmo no decorrer da historia, tendo uma das sua representações a seguinte forma:
 
-
+% TODO: colocar o código fonte em arquivo separado e adicionar
 \begin{lstlisting}[language=Python,label=damerau_levenshtein_distance_py,caption={Implementação da distância de Levenshtein}]
 def calculate_distance(s1,s2):
     d = {}

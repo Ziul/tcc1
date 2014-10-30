@@ -1,11 +1,11 @@
-\section{Damerau-Levenshtein} % (fold)
+\subsection{Damerau-Levenshtein} % (fold)
 \label{sec:damerau_levenshtein}
 
 A distancia de Damerau-Levenshtein é uma variação da distancia de Levenshtein\cite{levenshtein1965}, havendo ainda a implementação da transposição no \textit{set} de operações básicas.
 
 Por permitir a restrição de um universo de palavras e considerar apenas a transposição de caracteres, a distância de \textit{Damerau-Levenshtein} abriu portas para um novo padrão de métricas, as biológicas, no campo de mensurar a variação entre moléculas de DNA. Esta seria a brecha necessária para que surgissem outros métodos de analise de moléculas de DNA baseadas em comparamento de strings, tais como o algoritmo de \textit{Needleman–Wunsch}\cite{needleman1970general} e ate mesmo o de \textit{Smith-Waterman}\cite{smith1981identification}, apresentado neste trabalho na sessão \ref{sec:smith_waterman}.
 
-\subsection{Implementação do Damerau-Levenshtein} % (fold)
+\subsubsection{Implementação do Damerau-Levenshtein} % (fold)
 \label{sub:implementa_o_do_damerau_levenshtein}
 
 Para melhor contextualização da diferença entre o método tradicional de calculo de distância e o modelo de \textit{Damerau-Levenshtein}, consideremos a seguir uma visão atômica de como seria o procedimento de câlculo.

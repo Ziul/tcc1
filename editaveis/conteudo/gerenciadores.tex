@@ -4,7 +4,7 @@
 \subsection{Contextualização} % (fold)
 \label{sec:breve_descri_o}
 
-Dês do lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizados por completo, surgindo, apresentando e amadurecendo sua filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente das principais distribuições hoje no mercado: \textit{Debian, Red Hat, Slackware} ou \textit{Arch}
+Desde o lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizados por completo, surgindo, apresentando e amadurecendo sua filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente das principais distribuições hoje no mercado: \textit{Debian, Red Hat, Slackware} ou \textit{Arch}
 % Adicionar a Gentoo dentre as principais distribuições?
 
 Em sistemas operacionais Linux, a muito foi definido uma padronização para distribuições de aplicações para o sistemas, chamados pacotes. A filosofia por trás da comunidade livre e o interesse em buscar novas formas de armazenamento e distribuição de pacotes fez com que surgissem diversos \textit{gerenciadores de pacotes}, especializados para cada distribuição.
@@ -12,30 +12,32 @@ Em sistemas operacionais Linux, a muito foi definido uma padronização para dis
 Devido grande parte das distribuições hoje existentes serem ramificações das distribuições \textit{Debian, Red Hat, Slackware} ou \textit{Arch},os diversos gerenciadores de pacotes hoje disponíveis também possuem muitas similaridades entre eles.
 Estas distribuições representam o berço de grande parte das distribuições existentes hoje. Assim, este trabalho buscará apresentar resultados que possam ser facilmente convertido para os demais gerenciadores, sempre visando a maior compatibilidade possível com o maior número de distribuições disponíveis.
 
-\subsection{Candidatos para estudo} % (fold)
-\label{sec:candidatos_para_estudo}
+\subsection{Gerenciadores de pacotes e Gerenciadores de Repositórios} % (fold)
+\label{sec:gerenciadores}
+
+% TODO Definir e diferenciar gerenciadores de pacotes e gerenciadores de
+% repositórios
 
 Tendo em vista que este trabalho busca apresentar melhores soluções para a ordenação de pacotes na resposta recebida em uma pesquisa realizada em um gerenciador de pacotes, devemos inicialmente estudar os possíveis candidatos a ser estudado no trabalho.
 Desta forma, os gerenciadores de pacotes que serão levados em consideração neste trabalho serão:
 
-\begin{enumerate}
-	\item Apt\\
-		Gerenciador amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}). Provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
-	\item Yum\\
-		Gerenciador padrão  das distribuições oriundas da \textbf{RedHat}, como o \textbf{Fedora} e \textbf{CentOS}.
-	\item Portage\\
-		Gerenciador padrão da distribuição \textbf{Gentoo} e suas ramificações. Escrito em \textit{Python} e \textit{Bash}, normalmente o gerenciador é utilizado através da ferramenta \textit{emerge}.
-	\item Pacman\\
-		Dentre os gerenciadores de pacotes, é provavelmente o mais recente dentre os mais comuns. Como não poderia deixar de ser, é  o gerenciador de pacotes de uma ramificação recente dentre distribuições Linux que vem conseguindo ganhar seu espaço entre distribuições mais tradicionais, a \textbf{Arch}, lançada em março de 2002.
-\end{enumerate}
-
-\subsubsection{Comandos Básicos} % (fold)
-\label{sec:comandos_b_sicos}
+% TODO Transformar cada item da descrição em uma subsubsection, com dois ou
+% três parágrafos (data de criação, autores, distros, principais vantagens/
+% características, gerenciador de pacotes que roda por baixo (citações das documentações)
+\begin{description}
+	\item [Apt] Gerenciador amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}). Provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
+	\item [Yum] Gerenciador padrão  das distribuições oriundas da \textbf{RedHat}, como o \textbf{Fedora} e \textbf{CentOS}.
+	\item [Portage] Gerenciador padrão da distribuição \textbf{Gentoo} e suas ramificações. Escrito em \textit{Python} e \textit{Bash}, normalmente o gerenciador é utilizado através da ferramenta \textit{emerge}.
+	\item [Pacman] Dentre os gerenciadores de pacotes, é provavelmente o mais recente dentre os mais comuns. Como não poderia deixar de ser, é  o gerenciador de pacotes de uma ramificação recente dentre distribuições Linux que vem conseguindo ganhar seu espaço entre distribuições mais tradicionais, a \textbf{Arch}, lançada em março de 2002.
+\end{description}
 
 
-\subsubsubsection{Apt} % (fold)
+\subsubsection{Comandos básicos} % (fold)
 \label{sub:apt}
 
+% TODO Escrever uma intro (3 a 4 parágrafos) descrevendo rapidamente os
+% principais comandos (instalação, remoção, busca e consulta). Depois
+% montar uma tabela de comandos por gerenciador
 Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
 
 \begin{itemize}
