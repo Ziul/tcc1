@@ -24,97 +24,74 @@ Desta forma, os gerenciadores de pacotes que serão levados em consideração ne
 % TODO Transformar cada item da descrição em uma subsubsection, com dois ou
 % três parágrafos (data de criação, autores, distros, principais vantagens/
 % características, gerenciador de pacotes que roda por baixo (citações das documentações)
-\begin{description}
-	\item [Apt] Gerenciador amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}). Provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
-	\item [Yum] Gerenciador padrão  das distribuições oriundas da \textbf{RedHat}, como o \textbf{Fedora} e \textbf{CentOS}.
-	\item [Portage] Gerenciador padrão da distribuição \textbf{Gentoo} e suas ramificações. Escrito em \textit{Python} e \textit{Bash}, normalmente o gerenciador é utilizado através da ferramenta \textit{emerge}.
-	\item [Pacman] Dentre os gerenciadores de pacotes, é provavelmente o mais recente dentre os mais comuns. Como não poderia deixar de ser, é  o gerenciador de pacotes de uma ramificação recente dentre distribuições Linux que vem conseguindo ganhar seu espaço entre distribuições mais tradicionais, a \textbf{Arch}, lançada em março de 2002.
-\end{description}
-
+% \begin{description}
+% 	\item [Apt] Gerenciador amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}). Provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
+% 	\item [Yum] Gerenciador padrão  das distribuições oriundas da \textbf{RedHat}, como o \textbf{Fedora} e \textbf{CentOS}.
+% 	\item [Portage] Gerenciador padrão da distribuição \textbf{Gentoo} e suas ramificações. Escrito em \textit{Python} e \textit{Bash}, normalmente o gerenciador é utilizado através da ferramenta \textit{emerge}.
+% 	\item [Pacman] Dentre os gerenciadores de pacotes, é provavelmente o mais recente dentre os mais comuns. Como não poderia deixar de ser, é  o gerenciador de pacotes de uma ramificação recente dentre distribuições Linux que vem conseguindo ganhar seu espaço entre distribuições mais tradicionais, a \textbf{Arch}, lançada em março de 2002.
+% \end{description}
+\input{editaveis/conteudo/apt}
+\input{editaveis/conteudo/yum}
+\input{editaveis/conteudo/portage}
+\input{editaveis/conteudo/pacman}
 
 \subsubsection{Comandos básicos} % (fold)
-\label{sub:apt}
+\label{subs:comandos_basicos}
 
 % TODO Escrever uma intro (3 a 4 parágrafos) descrevendo rapidamente os
 % principais comandos (instalação, remoção, busca e consulta). Depois
 % montar uma tabela de comandos por gerenciador
-Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
 
-\begin{itemize}
-	\item Instalar
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# apt-get install  <package>
-	\end{lstlisting}
-	\item Remover
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# apt-get purge  <package>
-	\end{lstlisting}
-	\item Procurar pacote
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# apt-cache search  <package>
-	\end{lstlisting}
-\end{itemize}
-
-
-\subsubsubsection{Yum} % (fold)
-\label{sub:yum}
-
-Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
-
-\begin{itemize}
-	\item Instalar
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# yum install  <package>
-	\end{lstlisting}
-	\item Remover
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# yum purge  <package>
-	\end{lstlisting}
-	\item Procurar pacote
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# yum search  <package>
-	\end{lstlisting}
-\end{itemize}
+% % APT
+% \begin{itemize}
+% 	\item Instalar
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# apt-get install  <package>
+% 	\end{lstlisting}
+% 	\item Remover
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# apt-get purge  <package>
+% 	\end{lstlisting}
+% 	\item Procurar pacote
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# apt-cache search  <package>
+% 	\end{lstlisting}
+% \end{itemize}
 
 
-\subsubsubsection{Pacman} % (fold)
-\label{sub:pacan}
-
-Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
-
-\begin{itemize}
-	\item Instalar
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# pacman -S  <package>
-	\end{lstlisting}
-	\item Remover
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# pacman -Rc  <package>
-	\end{lstlisting}
-	\item Procurar pacote$^*$
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# pacman -Si  <package>
-	# pacman -Qi  <package>
-	\end{lstlisting}
-\end{itemize}
+% % Yum
+% \begin{itemize}
+% 	\item Instalar
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# yum install  <package>
+% 	\end{lstlisting}
+% 	\item Remover
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# yum purge  <package>
+% 	\end{lstlisting}
+% 	\item Procurar pacote
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# yum search  <package>
+% 	\end{lstlisting}
+% \end{itemize}
 
 
-\subsubsubsection{Zypper} % (Zypper)
-\label{sub:zypper}
+% % Pacman
+% \begin{itemize}
+% 	\item Instalar
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# pacman -S  <package>
+% 	\end{lstlisting}
+% 	\item Remover
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# pacman -Rc  <package>
+% 	\end{lstlisting}
+% 	\item Procurar pacote$^*$
+% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
+% 	# pacman -Si  <package>
+% 	# pacman -Qi  <package>
+% 	\end{lstlisting}
+% \end{itemize}
 
-Dentre os comandos que a ferramenta disponibiliza, os comandos básicos (procura por pacote, instalar pacote e remover pacote) possuem a seguinte sintaxe:
 
-\begin{itemize}
-	\item Instalar
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# zypper install  <package>
-	\end{lstlisting}
-	\item Remover
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# zypper purge  <package>
-	\end{lstlisting}
-	\item Procurar pacote
-	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-	# zypper search  <package>
-	\end{lstlisting}
-\end{itemize}
+% Emerge
