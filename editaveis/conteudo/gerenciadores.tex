@@ -4,13 +4,16 @@
 \subsection{Contextualização} % (fold)
 \label{sec:breve_descri_o}
 
-Desde o lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizados por completo, surgindo, apresentando e amadurecendo sua filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente das principais distribuições hoje no mercado: \textit{Debian, Red Hat, Slackware} ou \textit{Arch}
+Desde o lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizado por completo, apresentando e amadurecendo a filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente de uma das principais distribuições: \textit{Debian, Red Hat, Slackware} ou \textit{Arch}.
 % Adicionar a Gentoo dentre as principais distribuições?
 
-Em sistemas operacionais Linux, a muito foi definido uma padronização para distribuições de aplicações para o sistemas, chamados pacotes. A filosofia por trás da comunidade livre e o interesse em buscar novas formas de armazenamento e distribuição de pacotes fez com que surgissem diversos \textit{gerenciadores de pacotes}, especializados para cada distribuição.
+Em sistemas operacionais Linux, há muito foi proposto uma alternativa para distribuições de aplicações para o sistemas, chamados pacotes. A filosofia por trás da comunidade livre e o interesse em buscar novas formas de armazenamento e distribuição de pacotes fez com que surgissem diversos \textit{gerenciadores de pacotes}, especializados para cada distribuição.
 
-Devido grande parte das distribuições hoje existentes serem ramificações das distribuições \textit{Debian, Red Hat, Slackware} ou \textit{Arch},os diversos gerenciadores de pacotes hoje disponíveis também possuem muitas similaridades entre eles.
-Estas distribuições representam o berço de grande parte das distribuições existentes hoje. Assim, este trabalho buscará apresentar resultados que possam ser facilmente convertido para os demais gerenciadores, sempre visando a maior compatibilidade possível com o maior número de distribuições disponíveis.
+Devido grande parte das distribuições hoje existentes serem ramificações das distribuições \textit{Debian, Red Hat, Slackware} ou \textit{Arch}, os diversos gerenciadores de pacotes hoje disponíveis também possuem muitas similaridades entre eles.
+Assim, este trabalho buscará apresentar resultados que possam ser aplicadas em qualquer gerenciador, sempre visando a maior compatibilidade possível com o maior número de distribuições disponíveis.
+
+
+% TODO: Acrescentar um parágrafo citando alguns gerenciadores de pacotes e formatos (dpkg/deg, rpm, etc).
 
 \subsection{Gerenciadores de pacotes e Gerenciadores de Repositórios} % (fold)
 \label{sec:gerenciadores}
@@ -18,8 +21,8 @@ Estas distribuições representam o berço de grande parte das distribuições e
 % TODO Definir e diferenciar gerenciadores de pacotes e gerenciadores de
 % repositórios
 
-Tendo em vista que este trabalho busca apresentar melhores soluções para a ordenação de pacotes na resposta recebida em uma pesquisa realizada em um gerenciador de pacotes, devemos inicialmente estudar os possíveis candidatos a ser estudado no trabalho.
-Desta forma, os gerenciadores de pacotes que serão levados em consideração neste trabalho serão:
+Tendo em vista que este trabalho busca apresentar uma melhor solução para a ordenação de pacotes listados na resposta recebida em uma pesquisa realizada em um gerenciador de repositórios, devemos inicialmente elencar os possíveis candidatos a serem utilizados no trabalho.
+Desta forma, os gerenciadores de repositórios que serão levados em consideração neste trabalho serão:
 
 % TODO Transformar cada item da descrição em uma subsubsection, com dois ou
 % três parágrafos (data de criação, autores, distros, principais vantagens/
@@ -42,56 +45,16 @@ Desta forma, os gerenciadores de pacotes que serão levados em consideração ne
 % principais comandos (instalação, remoção, busca e consulta). Depois
 % montar uma tabela de comandos por gerenciador
 
-% % APT
-% \begin{itemize}
-% 	\item Instalar
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# apt-get install  <package>
-% 	\end{lstlisting}
-% 	\item Remover
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# apt-get purge  <package>
-% 	\end{lstlisting}
-% 	\item Procurar pacote
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# apt-cache search  <package>
-% 	\end{lstlisting}
-% \end{itemize}
-
-
-% % Yum
-% \begin{itemize}
-% 	\item Instalar
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# yum install  <package>
-% 	\end{lstlisting}
-% 	\item Remover
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# yum purge  <package>
-% 	\end{lstlisting}
-% 	\item Procurar pacote
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# yum search  <package>
-% 	\end{lstlisting}
-% \end{itemize}
-
-
-% % Pacman
-% \begin{itemize}
-% 	\item Instalar
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# pacman -S  <package>
-% 	\end{lstlisting}
-% 	\item Remover
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# pacman -Rc  <package>
-% 	\end{lstlisting}
-% 	\item Procurar pacote$^*$
-% 	\begin{lstlisting}[numbers=none,commentstyle=\color{black}]
-% 	# pacman -Si  <package>
-% 	# pacman -Qi  <package>
-% 	\end{lstlisting}
-% \end{itemize}
-
-
-% Emerge
+% TODO: Reduzir tamanho da tabela
+\begin{table}[htbp]
+\caption{Principais comandos dos gerenciadores de repositórios mais populares}
+\begin{tabular}{|l|c|c|c|}
+\hline
+& \textbf{Instalar} & \textbf{Remover} & \textbf{Procurar} \\ \hline
+\textbf{APT} & apt-get install <pacote> & apt-get purge <pacote> & apt-cache search <pacote> \\ \hline
+\textbf{YUM} & yum install <pacote> & yum purge <pacote> & yum search <pacote> \\ \hline
+\textbf{Pacman} & pacman -S <pacote> & pacman -Rc <pacote> & pacman -Si  <pacote> \&\& pacman -Qi  <pacote> \\ \hline
+\textbf{Emerge} & emerge <pacote> & emerge remove <pacote> & emerge search <pacote> \\ \hline
+\end{tabular}
+\label{cmd_gerenciadores}
+\end{table}

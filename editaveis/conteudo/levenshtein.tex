@@ -1,36 +1,38 @@
 \subsection{Levenshtein} % (fold)
 \label{sec:leveinstein}
 
-Uma das abordagens proposta neste trabalho são baseadas nos trabalhos de \textit{Vladimir Levenshtein}. Atuante na área de teoria da informação, código de correção de erros e design combinacional, Levenshtein publicou 1965 na [REVISTA] aquele que viria a ser o trabalho pelo qual seria reconhecido dês de então: \textit{Binary codes with correction of drooping and insertion of the symbol 1}\cite{levenshtein1965}. Republicado um resumo em 1966 com o titulo de \textit{Binary codes capable of correcting deletions, insertions and reversals}\cite{levenshtein1966}, a obra tratava do calculo da distância entre duas \textit{strings}, ou seja, dada as \textit{strings} \textbf{A} e \textbf{B} a quantidade mínima de operações necessárias para, partindo da \textit{string} \textbf{A}, seja possível chegar na \textit{string} \textbf{B}. Entende-se por operações a inserção, remoção e substituição de um caractere.
+Duas das abordagens propostas neste trabalho são baseadas nos trabalhos de \textit{Vladimir Levenshtein}. Atuante na área de teoria da informação, código de correção de erros e design combinacional, Levenshtein publicou 1965 na [REVISTA] o trabalho pelo qual seria reconhecido desde então: \textit{Binary codes with correction of drooping and insertion of the symbol 1}\cite{levenshtein1965}. Republicado num resumo em 1966 com o título de \textit{Binary codes capable of correcting deletions, insertions and reversals} \cite{levenshtein1966}, a obra tratava do cálculo da distância entre duas \textit{strings}, ou seja, dada as \textit{strings} \textbf{A} e \textbf{B}, determinar a quantidade mínima de operações necessárias para, partindo da \textit{string} \textbf{A}, seja possível obter a \textit{string} \textbf{B}. Entende-se por operações a inserção, remoção e substituição de um caractere.
 
 \subsubsection{Exemplo de cálculo de distancia entre \textit{strings}} % (fold)
 \label{sub:exemplo_de_c_lculo_de_distancia_entre_it}
 
-Para uma maior compreensão do que se trata uma operação e distancia entre strings, tomemos como exemplos duas palavras, \textbf{cantar} e \textbf{dançar} e vamos proceder com algumas operações para, partindo da primeira, alcançar a segunda palavra.
+Para uma maior compreensão do que se trata uma operação e a distância entre \textit{strings}, tomemos como exemplos duas palavras, \textbf{cantar} e \textbf{dançar}. Vamos aplicar algumas operações para, a partir da primeira, alcançar a segunda palavra.
 
 
 \begin{enumerate}[start=0]
 	\item cantar
-	\item dantar \textit{Substituição de 'c' por 'd'}
-	\item dançar \textit{Substituição de 't' por 'ç'}
+	\item dantar \textit{(Substituição de \lq c\rq por \lq d\rq)}
+	\item dançar \textit{(Substituição de \lq t\rq por \lq ç\rq)}
 \end{enumerate}
 
-Como podemos observar, foram necessárias duas operações para alcançar \textbf{dançar}, sendo assim, a distância entre elas é $2$.
-É importante observar observar que, mesmo que duas letras iguais e consecutivas sejam substituídas por outras duas mesmas letras, serão creditadas duas operações, por exemplo as palavras \textbf{correr} e \textbf{Potter}:
+Como podemos observar, foram necessárias duas operações para alcançar \textbf{dançar}. Como este é o número mínimo de operações para se obter o resultado desejado, a distância entre elas é $2$.
+É importante observar observar que, mesmo que duas letras iguais e consecutivas sejam substituídas por outras duas letras idênticas, serão creditadas duas operações, por exemplo as palavras \textbf{correr} e \textbf{Potter}:
 
 \begin{enumerate}[start=0]
 	\item correr
-	\item Porrer \textit{Substituição de 'c' por 'P'}
-	\item Potrer \textit{Substituição do primeiro 'r' por 't'}
-	\item Potter \textit{Substituição do segundo 'r' por 't'}
+	\item Porrer \textit{(Substituição de \lq c\rq por \lq P\rq)}
+	\item Potrer \textit{(Substituição do primeiro \lq r\rq por \lq t\rq)}
+	\item Potter \textit{(Substituição do segundo \lq r\rq por \lq t\rq)}
 \end{enumerate}
 
-Precisamos então de 3 operações para alcançar \textbf{Potter} partindo de \textbf{correr}. Toma-se do pressuposto que o algoritmo é \textit{case-sensitive} e sua ordenação é baseada na tabela \textit{ASCII}.
+Precisamos então de 3 operações para alcançar \textbf{Potter} partindo de \textbf{correr}. É do pressuposto que o algoritmo é \textit{case-sensitive} e sua ordenação é baseada na Tabela \textit{ASCII}.
+
+% TODO: Inserir uma referência para a tabela ASCII (procurar o RFC que propôs a tabela ASCII)
 
 \subsubsection{Distância de Levenshtein}
 \label{sub:algoritmo_da_distancia}
 
-Nos trabalhos de Levenshtein em em 1965 e 1966, são apesentados apenas as possibilidades de localização do caractere perdido, ou do bit perdido na sequencia binaria, porém, tamanha descrição apresentada para a identificação do caractere apresentada no trabalho de 1966\cite{levenshtein1966} possibilitaram a implementação do algoritmo no decorrer da historia, tendo uma das sua representações a seguinte forma:
+Nos trabalhos de Levenshtein de 1965 e 1966, são apesentadas apenas as possibilidades de localização do caractere perdido, ou do \textit{bit} perdido na sequência binária. Porém a descrição apresentada para a identificação do caractere no trabalho de 1966 \cite{levenshtein1966} possibilitou a implementação do algoritmo no decorrer da história, tendo uma das sua representações mostrada no Código \ref{damerau_levenshtein_distance_py}.
 
 % TODO: colocar o código fonte em arquivo separado e adicionar
 \begin{lstlisting}[language=Python,label=damerau_levenshtein_distance_py,caption={Implementação da distância de Levenshtein}]
@@ -58,4 +60,5 @@ def calculate_distance(s1,s2):
     return d[lenstr1-1,lenstr2-1]
 \end{lstlisting}
 
-Como pode-se observar,  o calculo da distancia é realizado em cima de operações com uma matriz de distancias. Isso possibilitou a evolução das validações de distancias com a paralelização das operações com uso de de GPU ou FPGA, obtendo-se ganhos de operações nas casas de centenas.
+Como pode-se observar, a implementação do cálculo da distância utiliza programação dinâmica a partir de operações de inserção, remoção e substituição. Tal abordagem facilita a inserção de novas operações, conforme apresentado na próxima subseção.
+% Como pode-se observar,  o calculo da distancia é realizado em cima de operações com uma matriz de distancias. Isso possibilitou a evolução das validações de distancias com a paralelização das operações com uso de de GPU ou FPGA, obtendo-se ganhos de operações nas casas de centenas.
