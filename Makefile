@@ -16,9 +16,9 @@ FIXOS_FILES = $(addprefix $(FIXOS_DIR)/, $(FIXOS_SOURCES))
 
 EDITAVEIS_DIR = editaveis
 EDITAVEIS_SOURCES = abreviaturas.tex agradecimentos.tex apendices.tex \
-	      			consideracoes.tex dedicatoria.tex elementosdotexto.tex \
-	      			errata.tex introducao.tex resumo.tex textoepostexto.tex\
-					abstract.tex anexos.tex aspectosgerais.tex elementosdopostexto.tex\
+	      			consideracoes.tex dedicatoria.tex \
+	      			errata.tex resumo.tex textoepostexto.tex\
+					abstract.tex anexos.tex aspectosgerais.tex \
 					epigrafe.tex informacoes.tex simbolos.tex \
 					conteudo/levenshtein.tex conteudo/gerenciadores.tex\
 					conteudo/Damerau-Levenshtein.tex conteudo/Smith-Waterman.tex
