@@ -2,20 +2,15 @@
 \subsubsection{APT} % (fold)
 \label{subs:apt}
 
-O APT é um gerenciador de repositórios  amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}). É provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
+O {\code APT}, \textit{Advanced Package Tool}, é um gerenciador de repositórios  amplamente utilizado em distribuições oriundas da Debian (\textit{Debian-like}).
+É provavelmente o gerenciador mais comum atualmente devido a popularidade de distribuições como \textbf{Ubuntu}, \textbf{Mint} e \textbf{Debian}.
 
-\subsubsubsection{Sobre o apt-cache} % (fold)
-\label{subs:sobre_o_apt_cache}
+Por ser um \textit{gerenciador de repositórios}, o {\code APT} trabalha unicamente com os arquivos \textit{.deb} que possuem seus respectivos endereços registrados no arquivo {\code/etc/apt/sources. list}, possibilitando o uso de diretórios remotos ou locais para a disponibilização dos pacotes a serem gerenciados. Requisitado a instalação de um pacote ao {\code APT}, será feito o \textit{download} do pacote e  suas respectivas dependências e repassado ao {\code dpkg} para que seja realizado o processo de instalação.
 
-% section sobre_o_apt_cache (end)
-
-\subsubsubsection{Funcionalidade do apt-cache} % (fold)
-\label{subs:funcionalidade_do_apt_cache}
-
+%(data de criação, autores, distros, principais vantagens/características, gerenciador de pacotes que roda por baixo (citações das documentações)
 
 % Como introduzido em \ref{sub:visualiza_o_do_problema}, o \textit{APT} possui como repositório oficial o \url{git://anonscm.debian.org/apt/apt.git}, apesar de também ser hospedado em outros repositórios, tal como o \url{https://github.com/Debian/apt}. Uma observação mais atenta no \href{https://github.com/Debian/apt/blob/debian/experimental/cmdline/apt-cache.cc}{apt-cache.cc}, disponibilizado no repositório nos esclarece como o \textit{apt-cache} procede na ordenação dos pacotes para impressão.
 
 %\begin{lstlisting}[language=C++]
 %LocalitySort(&DFList->Df,Cache->HeaderP->GroupCount,sizeof(*DFList));
 %\end{lstlisting}
-

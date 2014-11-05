@@ -42,7 +42,7 @@
 \makeatother
 \renewcommand\lstlistingname{Código}
 
-\DeclareCaptionFormat{listing}{\vskip1pt\rule{\dimexpr\textwidth\relax}{0.4pt}\par\vskip1pt{\centering#1#2#3}}
+\DeclareCaptionFormat{listing}{\vskip1pt\rule{\dimexpr\textwidth\relax}{0.4pt}\par\vskip1pt{\centering#1#2$-$ #3}}
 \captionsetup[lstlisting]{format=listing,singlelinecheck=false, margin=0pt, font={sf},labelsep=space,labelfont=bf}
 
 \DeclareMathVersion{sans}
@@ -94,3 +94,4 @@ basicstyle=\small\ttfamily}
 %------------------------------
 
 \DeclareCaptionSubType*[fnsymbol]{table}
+\newcommand{\code}{\small\ttfamily}
