@@ -95,3 +95,12 @@ basicstyle=\small\ttfamily}
 
 \DeclareCaptionSubType*[fnsymbol]{table}
 \newcommand{\code}{\small\ttfamily}
+
+%% Nameref
+%-------------------------------
+
+\newcommand{\lnameref}[1]{%
+\bgroup
+\let\nmu\MakeLowercase
+\nameref{#1}\egroup}
+\newcommand{\nmu}{}
