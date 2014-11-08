@@ -1,10 +1,10 @@
 \subsection{Damerau-Levenshtein} % (fold)
 \label{sec:damerau_levenshtein}
 
-A distância de Damerau-Levenshtein é uma variação da distância de Levenshtein\cite{levenshtein1965}, havendo ainda a adição da transposição no \textit{set} de operações básicas.
+A distância de Damerau-Levenshtein é uma variação da distância de Levenshtein\cite{levenshtein1965}, havendo ainda a adição da transposição no \textit{set} de operações básicas. Em seus estudos, Damerau apresentou que mais de $80\%$ dos erros de escrita oriundo de humanos estavam relacionados às operações de falta de caractere, excesso de caractere, substituição de caracteres ou transposição de caracteres \cite{damerau1964technique}.
 
-% TODO: Apresentar a restrição de palavras
-Por permitir a restrição de um universo de palavras e considerar também a transposição de caracteres, a distância de \textit{Damerau-Levenshtein} abriu portas para um novo padrão de métricas, as biológicas, no campo de mensurar a variação entre moléculas de DNA. Esta seria a brecha necessária para que surgissem outros métodos de analise de moléculas de DNA baseadas em comparamento de \textit{strings}, tais como o algoritmo de \textit{Needleman–Wunsch} \cite{needleman1970general} e  o de \textit{Smith-Waterman} \cite{smith1981identification}, apresentado  na Seção \ref{sec:smith_waterman}.
+
+Por  considerar  a transposição de dois caracteres adjacentes, a distância de \textit{Damerau-Levenshtein} abriu portas para um novo padrão de métricas, as biológicas, no campo de mensurar a variação entre moléculas de DNA. Esta seria a brecha necessária para que surgissem outros métodos de analise de moléculas de DNA baseadas em comparamento de \textit{strings}, tais como o algoritmo de \textit{Needleman–Wunsch} \cite{needleman1970general} e  o de \textit{Smith-Waterman} \cite{smith1981identification}, apresentado  na Seção \ref{sec:smith_waterman}.
 
 \subsubsection{Implementação} % (fold)
 \label{sub:implementa_damerau_levenshtein}

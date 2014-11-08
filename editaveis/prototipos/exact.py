@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 from apt import Cache
 import optparse
-import time
 import swalign
 from ranking import Pack,_parser
 from math import fabs
@@ -41,7 +41,6 @@ if __name__ == '__main__':
     package_name = _args[0]
     suffixes = ['core','dev','commom','devel']
     prefixes = ['lib']
-    agora = time.time()
 
     match = 2
     mismatch = -1
@@ -68,9 +67,9 @@ if __name__ == '__main__':
     # ultimo = time.time()
     #lista =list(set(lista))
     lista = filter(None, lista)
-    print len(lista)
     lista = sorted(lista,cmp=_cmp)
-    ultimo = time.time()
-    print "{} segundos".format(ultimo-agora)
+    _options.amount = 300
     for i in lista[:_options.amount]:
         print i
+
+    print '%d apresentações' % len(lista)

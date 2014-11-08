@@ -11,27 +11,61 @@ O algoritmo trabalha com o alinhamento de \textit{strings} no intuito de  buscar
 \subsubsection{Algoritmo} % (fold)
 \label{sub:algoritmo}
 
-Considerando as \textit{strings} $a$ e $b$ de tamanhos $m,n$ respectivamente, é montada uma matriz $H$ de acordo com as seguintes regras:
+De acordo com o artigo de Smith e Waterman \cite{smith1981identification}, o algoritmo pode ser apresentado como:
+
+Considerando as \textit{strings} $a$ e $b$ de tamanhos $n,m$ respectivamente e $s(a,b)$ a função de similaridade do universo a ser considerado\footnote{Smith considerava apenas as letras \textit{A,C,U,G} devido ao algoritmo ser voltado para identificação de similidades genéticas, todavia a generalização para as demais letras do alfabeto não invalida o algoritmo.}, é montada uma matriz $H$  no intuito de encontrar os dois pares com maior grau de similaridade formada por $W_i$ sendo a nota de lacuna\footnote{Também conhecida como \textit{gap-scoring} ou \textit{gap-penalty}.}.
+
+\begin{equation*}
+	H_{k0} = H_{0l} = 0 \text{ para } 0\leq k \leq n \text{ e } 0\leq l \leq m.
+\end{equation*}
+
+Valores preliminares de $H$ tem a interpretação de que $H_{ij}$ tem a máxima similaridade de duas \textit{strings} que possuem final $a_i$ e $b_j$ respectivamente. Os valores de $H_ij$ podem ser obtidos através da relação:
+
+% \begin{align*}
+% 	H(i,0) =& 0, 0 \leq i \leq m \\
+% 	H(0,j) =& 0, 0 \leq j \leq n \\
+% 	H(i,j) =& \text{max}
+% 	\begin{Bmatrix}
+% 		H(i-1,j-1) + s(a_i,b_j) & \text{Correspondências}\\
+% 		\underset{k\geq1}{\text{max}} \left\{H(i-k,j) - W_k\right\} & \text{Remoções}\\
+% 		\underset{l\geq1}{\text{max}} \left\{H(i,j-l) - W_l\right\} & \text{Inserções}\\
+% 	\end{Bmatrix},\\
+% 	1 \leq i \leq n& \text{ e } 1 \leq j \leq m
+% \end{align*}
 
 \begin{align*}
 	H(i,0) =& 0, 0 \leq i \leq m \\
 	H(0,j) =& 0, 0 \leq j \leq n \\
 	H(i,j) =& \text{max}
 	\begin{Bmatrix}
-		0  &\\
-		H(i-1,j-1) + s(a_i,b_j) & \text{Correspondências}\\
-		\underset{k\geq1}{\text{max}} \left\{H(i-k,j) + W_k\right\} & \text{Remoções}\\
-		\underset{l\geq1}{\text{max}} \left\{H(i,j-l) + W_l\right\} & \text{Inserções}
-	\end{Bmatrix}, 1 \leq i \leq m, 1 \leq j \leq n
+		H_{i-1,j-1} + s(a_i,b_j) ,\\
+		\underset{k\geq1}{\text{max}} \left\{H_{i-k,j} - W_k\right\} ,\\
+		\underset{l\geq1}{\text{max}} \left\{H_{i,j-l} - W_l\right\} ,\\
+		0
+	\end{Bmatrix},\\
+	1 \leq i \leq n& \text{ e } 1 \leq j \leq m
 \end{align*}
 
-Sendo:
-\begin{itemize}
-	\item $s(a,b)$: a função de similaridade do alfabeto
-	\item $W_i$: a nota de lacuna\footnote{Também conhecida como \textit{gap-scoring} ou \textit{gap-penalty}.}
-\end{itemize}
 
 Montada a matriz $H$, para obter o melhor alinhamento, o algoritmo dita começar com o maior valor na matriz $(i,j)$, vá então retornando em sentido a célula $(0,0)$, seguindo pelos pontos $(i - 1,j), (i, j - 1)$, ou $(i - 1, j - 1)$.
+
+A formula para $H_{ij}$ considera as possibilidades de fim da \textit{string} para qualquer $a_i$ ou $b_j$, tal que:
+
+\begin{enumerate}
+	\item Se $a_i$ e $b_j$ forem associados, a similaridade será dada por:
+	\begin{equation*}
+		H_{i-1,j-1} + s(a_i,b_j)
+	\end{equation*}
+	\item Se $a_i$ esta ao fim de uma remoção de largura $k$, a similaridade será dada por:
+	\begin{equation*}
+		H_{i-k,j} - W_k
+	\end{equation*}
+	\item Se $b_i$ esta ao fim de uma remoção de largura $l$, a similaridade será dada por:
+	\begin{equation*}
+		H_{i,j-l} - W_l
+	\end{equation*}
+	\item Por fim é incluído sentinelas a fim de precaver o calculo de similaridades negativas.
+\end{enumerate}
 
 \subsubsection{Implementação do algoritmo} % (fold)
 \label{sub:implementa_o_do_algoritmo}

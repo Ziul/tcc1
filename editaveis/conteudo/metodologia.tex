@@ -18,22 +18,20 @@ No intuito de apresentar alternativas de ordenação de pacotes à atual situaç
 
 Dentre os algoritmos de comparação de \textit{strings}, serão abordados os seguintes:
 
-\begin{itemize}
-	\item \textbf{Levenshtein}\\
-	Trata do calculo da distância entre duas \textit{strings}. Será visto mais detalhadamente na sessão \ref{sec:leveinstein} deste documento.
+\begin{description}
+	\item [\textbf{Levenshtein}:] 
+	Trata do calculo da distância entre duas \textit{strings}. Será visto mais detalhadamente na \autoref{sec:leveinstein} deste documento.
 %
-	\item \textbf{Damerau-Levenshtein}\\
-	Variação do método de Levenshtein, a distância de Damerau-Levenshtein consegue abordar alguns pontos de aproximação, como desordem de caracteres. Será visto mais detalhadamente na sessão \ref{sec:damerau_levenshtein} deste documento.
+	\item [\textbf{Damerau-Levenshtein}:]
+	Variação do método de Levenshtein, a distância de Damerau-Levenshtein consegue abordar alguns pontos de aproximação, como desordem de caracteres. Será visto mais detalhadamente na sessão \autoref{sec:damerau_levenshtein} deste documento.
 %
-	\item \textbf{Smith-Waterman}\\
-	Algoritmo de alinhamento de caracteres para determinação de regiões semelhantes entre duas \textit{strings}. Será visto mais detalhadamente na sessão \ref{sec:smith_waterman} deste documento.
+	\item [\textbf{Smith-Waterman}:]
+	Algoritmo de alinhamento de caracteres para determinação de regiões semelhantes entre duas \textit{strings}. Será visto mais detalhadamente na sessão \autoref{sec:smith_waterman} deste documento.
 
-\end{itemize}
+\end{description}
 
 \subsection{Implementação dos algoritmos} % (fold)
 \label{sub:implementa_o_dos_algoritmos}
-
-A primeiro momento, este trabalho tem como objetivo a apresentação de modelos distintos de ordenação no intuito de evidenciar a carência dos gerenciadores de pacotes atuais em apresentação de resultados de pesquisa por pacotes. Consciente do objetivo deste trabalho, será evitado o desenvolvimento dos códigos de algoritmo de ordenação, visto que o objetivo não é a implementação dos algoritmos, mas a comparação dos resultados obtidos através dos algoritmos de ordenação e suas performances nos estados atuais de implementação. Assim, serão utilizadas bibliotecas já implementadas dos algoritmos de ordenação, citando suas respectivas referências e créditos.
 
 Para uma simplificação dos objetivos, foi adotada a linguagem \textit{Python} por apresentar uma interface de interação com o gerenciador de pacote escolhido para uso neste trabalho, \nameref{subs:apt}. Partindo deste ponto, foram localizados algoritmos de ordenação de \textit{strings} disponibilizados no \href{https://pypi.python.org/}{PyPI}.
 

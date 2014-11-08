@@ -4,22 +4,21 @@
 \subsection{Contextualização} % (fold)
 \label{sec:breve_descri_o}
 
-Desde o lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizado por completo, apresentando e amadurecendo a filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente de uma das principais distribuições: \textit{Debian, Red Hat, Slackware} ou \textit{Arch}.
-% Adicionar a Gentoo dentre as principais distribuições?
+Desde o lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizado por completo, apresentando e amadurecendo a filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente de uma das principais distribuições: \textit{Debian, Red Hat, Slackware, Gentoo} ou \textit{Arch}.
 
-Em sistemas operacionais Linux, há muito foi proposto uma alternativa para distribuições de aplicações para o sistemas, chamados pacotes. A filosofia por trás da comunidade livre e o interesse em buscar novas formas de armazenamento e distribuição de pacotes fez com que surgissem diversos \textit{gerenciadores de pacotes}, especializados para cada distribuição.
+
+Em sistemas operacionais Linux, há muito foi proposto uma alternativa para distribuições de aplicações para o sistemas, chamados pacotes. A filosofia por trás da comunidade livre \cite{bretthauer2001open} e o interesse em buscar novas formas de armazenamento e distribuição de pacotes fez com que surgissem diversos \textit{gerenciadores de pacotes}, voltados à determinadas distribuição  cada \cite{beck2002linux}.
 
 Devido grande parte das distribuições hoje existentes serem ramificações das distribuições \textit{Debian, Red Hat, Slackware} ou \textit{Arch}, os diversos gerenciadores de pacotes hoje disponíveis também possuem muitas similaridades entre eles.
-Assim, este trabalho buscará apresentar resultados que possam ser aplicadas em qualquer gerenciador, sempre visando a maior compatibilidade possível com o maior número de distribuições disponíveis.
+É o caso do \textit{dpkg} e o \textit{rpm}, onde as funcionalidades de instalação, remoção e provimento de informações de pacotes esta presente em ambos. Ambos também são escritos predominantemente em \textit{C} e \textit{Perl}. Suas diferenças surgem quando chegamos a averiguar quais pacotes cada aplicação da suporte. O \textit{dpkg} esta voltado para os pacotes \textit{.deb}, enquanto o \textit{rpm} esta voltado para os pacotes \textit{rpm}. Como há uma distinção em como estes pacotes são montados \cite{bailey1997maximum}, há uma incompatibilidade entre as duas aplicações. 
 
-
-% TODO: Acrescentar um parágrafo citando alguns gerenciadores de pacotes e formatos (dpkg/deg, rpm, etc).
+% TODO: Acrescentar um parágrafo citando alguns gerenciadores de pacotes e formatos (dpkg/deg, rpm, etc). %DONE
 
 \subsection{Gerenciadores de pacotes e Gerenciadores de Repositórios} % (fold)
 \label{sec:gerenciadores}
 
 % TODO Definir e diferenciar gerenciadores de pacotes e gerenciadores de
-% repositórios
+% repositórios % DONE
 
 Um ponto de vista importante de ser caracterizado neste trabalho é a diferença entre os termos \textit{ gerenciadores de pacotes} e \textit{gerenciadores de repositórios}.
 É importante caracterizar a diferença estes dois termos comumente utilizados como sinônimos devido a sua similaridade. Suas proximidades são tão grandes que na própria documentação oficial do Debian não há uma caracterização de \textit{gerenciadores de repositórios}, citando apenas que gerenciadores como o {\code aptitude} ou {\code dselect} dependem do {\code APT}, que por sua vez depende do {\code dpkg} \cite{debian-faq}. Essa cadeia de dependências indicam as camadas de interface, onde o {\code dpkg} esta fortemente ligado aos pacotes a serem instalados ou removidos, enquanto o {\code APT} esta relacionado aos repositórios onde são armazenados os pacotes. Já aplicações como o {\code aptitude} ou o {\code synaptic} estão voltadas a produzirem uma camada mais \textit{friendly-user}, com interfaces visuais e menos poluição textual.
@@ -30,8 +29,8 @@ Tendo em vista que este trabalho busca apresentar uma melhor solução para a or
 Sendo assim, os gerenciadores de repositórios que serão levados em consideração neste trabalho serão:
 
 % TODO Transformar cada item da descrição em uma subsubsection, com dois ou
-% três parágrafos (data de criação, autores, distros, principais vantagens/
-% características, gerenciador de pacotes que roda por baixo (citações das documentações)
+% três parágrafos (data de criação, autores, distros, principais vantagens/ 
+% características, gerenciador de pacotes que roda por baixo (citações das documentações) %DONE
 
 \input{editaveis/conteudo/apt}
 \input{editaveis/conteudo/yum}
@@ -43,9 +42,9 @@ Sendo assim, os gerenciadores de repositórios que serão levados em consideraç
 
 % TODO Escrever uma intro (3 a 4 parágrafos) descrevendo rapidamente os
 % principais comandos (instalação, remoção, busca e consulta). Depois
-% montar uma tabela de comandos por gerenciador
+% montar uma tabela de comandos por gerenciador %DONE
 
-Por ser baseados em uma lista de repositórios, os \textit{gerenciadores de repositórios} recomendam uma atualização de seus bancos de dados antes de realizar qualquer sequencia de operações para garantir que seus \textit{links} serão validos. A Tabela \ref{sync_gerenciadores} apresenta os comandos para a atualização ou sincronização da lista de repositórios e pacotes dos gerenciadores. Os comandos de atualização de lista de repositórios precisam de permissão administrativa e devem ser relizados como usuário \textit{root} ou ter a invocação do comando {\code sudo} antes do comando de instalação/ remoção. Seguindo a padronização, comandos precedidos de \textbf{\code\#} implicam em comandos que necessitam de permissões administrativas enquanto comandos precedidos por \textbf{\code\$}  podem ser efetuados por qualquer usuário.
+Por ser baseados em uma lista de repositórios, os \textit{gerenciadores de repositórios} recomendam uma atualização de seus bancos de dados antes de realizar qualquer sequencia de operações para garantir que seus \textit{links} serão validos. A Tabela \ref{sync_gerenciadores} apresenta os comandos para a atualização ou sincronização da lista de repositórios e pacotes dos gerenciadores. Os comandos de atualização de lista de repositórios precisam de permissão administrativa e devem ser relizados como usuário \textit{root} ou ter a invocação do comando {\code sudo} antes do comando de instalação/ remoção. Seguindo a padronização adotada pelas distribuições Linux para apresentação de comandos em terminal \cite{hekman1996linux}, comandos precedidos de \textbf{\code\#} implicam em comandos que necessitam de permissões administrativas enquanto comandos precedidos por \textbf{\code\$}  podem ser efetuados por qualquer usuário.
 
 \begin{table}[htbp]
 \caption{Comandos para atualização do banco de dados dos gerenciadores de repositórios mais populares.}
