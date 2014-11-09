@@ -9,7 +9,7 @@ Por  considerar  a transposição de dois caracteres adjacentes, a distância de
 \subsubsection{Implementação} % (fold)
 \label{sub:implementa_damerau_levenshtein}
 
-Para melhor contextualização da diferença entre o método tradicional de cálculo de distância e o modelo de \textit{Damerau-Levenshtein}, consideremos a seguir uma visão atômica de como seria o procedimento do cálculo da distância de Levenshtein, conforme mostrado no código \ref{levenshtein_distance_py}.
+Para melhor contextualização da diferença entre o método tradicional de cálculo de distância e o modelo de \textit{Damerau-Levenshtein}, consideremos a seguir uma visão atômica de como seria o procedimento do cálculo da distância de Levenshtein, conforme mostrado no Código \ref{levenshtein_distance_py}.
 
 \begin{lstlisting}[language=Python,label=levenshtein_distance_py,caption={Visão atômica do cálculo da distância de Levenshtein}]
 def levenshtein_distance(s1, s2):
@@ -22,7 +22,7 @@ def levenshtein_distance(s1, s2):
     return d[lenstr1-1,lenstr2-1]
 \end{lstlisting}
 
-O código \ref{levenshtein_distance_py} serviria tanto para o modelo tradicional como para o de \textit{Damerau-Levenshtein}, necessitando apenas implementar o método \textit{calculate\_distance} de forma distinta. O trecho abaixo representa como seria sua implementação para o modelo de \textit{Damerau-Levenshtein}.
+O Código \ref{levenshtein_distance_py} serviria tanto para o modelo tradicional como para o de \textit{Damerau-Levenshtein}, necessitando apenas implementar o método \textit{calculate\_distance} de forma distinta. O trecho abaixo representa como seria sua implementação para o modelo de \textit{Damerau-Levenshtein}.
 
 \begin{lstlisting}[language=Python,label=damerau_levenshtein_distance_py,caption={Implementação da distância de Damerau-Levenshtein}]
 def calculate_distance(lenstr1,lenstr2,d):
@@ -43,7 +43,7 @@ def calculate_distance(lenstr1,lenstr2,d):
     return d
 \end{lstlisting}
 
-A distinção do método de \textit{Damerau-Levenshtein} para o modelo tradicional é apenas a inserção das linhas \textbf{13} e \textbf{14} no código \ref{damerau_levenshtein_distance_py}, que realiza a transposição dos caracteres, quando for o caso, ao custo de uma única operação.
+A distinção do método de \textit{Damerau-Levenshtein} para o modelo tradicional é apenas a inserção das linhas \textbf{13} e \textbf{14} no Código \ref{damerau_levenshtein_distance_py}, que realiza a transposição dos caracteres, quando for o caso, ao custo de uma única operação.
 
 % subsection implementa_o_do_damerau_levenshtein (end)
 %http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance
