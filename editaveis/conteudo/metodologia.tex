@@ -10,32 +10,16 @@
 % ustificjustificativa das escolha dos metodos/algoritmos
 % escolha dos pacotes para teste
 
+Observado a necessidade de métodos que apresentassem resultados mais intuitivos ao usuário, duas escolhas deviam ser tomadas para objetividade do estudo: a escolha da plataforma e gerenciador a adotado para base do estudo e qual linguagem seria adotada para o trabalho.
 
-\section{Métodos alternativos de ordenação} % (fold)
-\label{sec:m_todos_alternativos_de_ordena_o}
+Dentre os grandes grupos que a comunidade Linux se divide, distribuições oriundas do Debian e do Slackware são as predominantes. Dentre estas duas e suas ramificações, o Ubuntu é uma das distribuições mais indicadas e adotadas por pessoas que estão adentrando no mundo Linux. Desta forma o \textit{APT} torna-se o candidato escolhido dentro o grupo de gerenciadores de repositórios de pacotes.
 
-No intuito de apresentar alternativas de ordenação de pacotes à atual situação, foram verificadas algoritmos de comparação de strings baseados em artigos de ordenação, classificação e seleção.
 
-Dentre os algoritmos de comparação de \textit{strings}, serão abordados os seguintes:
+Para uma agilização na obtenção de resultados para os objetivos, foi adotada a linguagem \textit{Python} por apresentar uma interface de interação com o gerenciador de pacote escolhido para uso neste trabalho, \nameref{subs:apt} e por ser de fácil prototipagem de código ao proporcionar um rápido e enxuto desenvolvimento de código. 
 
-\begin{description}
-	\item [\textbf{Levenshtein}:] 
-	Trata do calculo da distância entre duas \textit{strings}. Será visto mais detalhadamente na \autoref{sec:leveinstein} deste documento.
-%
-	\item [\textbf{Damerau-Levenshtein}:]
-	Variação do método de Levenshtein, a distância de Damerau-Levenshtein consegue abordar alguns pontos de aproximação, como desordem de caracteres. Será visto mais detalhadamente na sessão \autoref{sec:damerau_levenshtein} deste documento.
-%
-	\item [\textbf{Smith-Waterman}:]
-	Algoritmo de alinhamento de caracteres para determinação de regiões semelhantes entre duas \textit{strings}. Será visto mais detalhadamente na sessão \autoref{sec:smith_waterman} deste documento.
+Partindo deste ponto, foram localizados algoritmos de ordenação de \textit{strings} apresentados em artigos e revistas cientificas. Por ser uma área estudada ate mesmo antes da modernização e popularização de computadores sejam por fins militares ou puramente científicos, este foi um dos pontos de difícil escolha de métodos devido a vasta diversidade da qual se é possível encontrar. Guiados por estudos recentes como o de Xu \cite{xu2013bit} com processamento usando GPUs ou mais antigos como o de Galil \cite{galil1988data}, um dos nomes que normalmente eram citados era o de Levenshtein e seu trabalho de 1966 \cite{levenshtein1966}. Este algoritmo por si só apontou outras duas alternativas, sendo uma delas uma variação do primeiro para maior exatidão de resultados. 
 
-\end{description}
-
-\subsection{Implementação dos algoritmos} % (fold)
-\label{sub:implementa_o_dos_algoritmos}
-
-Para uma simplificação dos objetivos, foi adotada a linguagem \textit{Python} por apresentar uma interface de interação com o gerenciador de pacote escolhido para uso neste trabalho, \nameref{subs:apt}. Partindo deste ponto, foram localizados algoritmos de ordenação de \textit{strings} disponibilizados no \href{https://pypi.python.org/}{PyPI}.
-
-Foram selecionados então os seguintes algoritmos:
+Devido o interesse no estudo seja apresentar alternativas para o modelo de busca apresentado hoje no gerenciador e não novos algoritmos de aproximação de \textit{string}, foram priorizados algoritmos de implementação pouco rebuscada, que apresentassem bons resultados de ordenação de \textit{strings} e que já estivessem implementados em linguagem \textit{Python}. Desta forma, foram escolhidos três algoritmos disponibilizados no \href{https://pypi.python.org/}{PyPI}. São eles:
 
 \begin{itemize}
 	\item \href{https://pypi.python.org/pypi/swalign/}{swalign}\\
