@@ -13,15 +13,24 @@
 % mount
 % gzip
 
-* = acima de 100\par
-** = acima de 1000\par
-*** = acima de 10000\par
+% * = acima de 100\par
+% ** = acima de 1000\par
+% *** = acima de 10000\par
 
+
+Para a obtenção dos resultados, foi utilizado um {\code Core™ i7 CPU 870} (\textit{2.93GHz})  e $3.8GB$ de RAM rodando sistema Ubuntu 14.04 LTS 64-bits. Os comandos foram todos executados em primeiro plano sem outra aplicação rodando em conjunto e foram-se efetuados cinco medidas consecutivas do tempo e retirada a média entre elas. A medida de tempo foi obtida executando a chamada das aplicações precedidas do comando {\code time} e tomado como resultado o valor retornado para o usuário. Na \autoref{fig:figuras_xpto} é possível observar um exemplo da procura pelo pacote \textit{xpto} no {\code apt}. Neste exemplo, o valor que seria considerado seria o de $890$ ms.
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.8\textwidth]{figuras/xpto}
+  \caption{Exemplo do uso do comando {\code time}}
+  \label{fig:figuras_xpto}
+\end{figure}
 
 \begin{table}[htbp]
 \caption{Comparação de resultados}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{|c|l|c|c|c|c|c|}
+\begin{tabular}[c]{|c|l|c|c|c|c|c|}
 \hline
 \multicolumn{ 2}{|c|}{\textbf{Pacote}} & \textbf{apt} & \textbf{apt-cache} & \textbf{Exact Match} & \textbf{Levenshtein} & \textbf{Smith-Waterman} \\ \hline
 \multicolumn{ 1}{|c|}{} & \textit{posição} & 27 & 3 & 1 & 1 & 1 \\ \cline{ 2- 7}
@@ -49,14 +58,38 @@
 }
 % \subcaption{Fonte: \href{http://popcon.ubuntu.com/}{Popcorn-Ubuntu}\protect\footnotemark}
 \label{tab:comparacao}
+\begin{description}
+	\tiny
+	\item [Legenda]
+	\item [*] Acima de 100 pacotes.
+	\item [**] Acima de 1000 pacotes.
+	\item [***] Acima de 10000 pacotes.
+	\item [$-$] Quantidade desconsiderada
+\end{description}
+
 \end{table}
 % \footnotetext{\label{tab:comparacao_footnote}Ordenado pelo número de pessoas que instalaram o pacote.}
 
+
+Tomados os devidos valores, foi montada então a \autoref{tab:comparacao} com 7 (sete) dentre os 30 (trita) pacotes mais instalados segundo o \href{http://popcon.ubuntu.com/}{Popcorn-Ubuntu}. Para uma melhor apresentação dos dados, valores acima de $100$ foram desconsiderados e as opções de uso de \textit{pool de threads} não foram utilizadas.
+
+O que  podemos observar  segundo a \autoref{tab:comparacao} é um certa deficiência em apresentar os pacotes realmente desejados no topo da lista de possibilidades quando se trata dos métodos padrões de busca, {\code apt} e {\code apt-cache}. Com a busca realizada no {\code apt}, a busca pelo pacote {\code bash} foi a mais felizarda, posicionando o pacote desejado na $6ª$ posição, porém teve resultados terríveis quando observado a busca pelos pacotes {\code sed} e {\code tar}, onde ambos apareciam na lista, após a $10000ª$ posição
+
+
+Devido o formato como o os prototipos de \textit{Levenshtein} e \textit{Smith} estão escritos, é possível se imprimir uma comparação com toda a lista de pacotes disponíveis na \textit{cache}. Assim, apenas os $50$ primeiros pacotes eram impressos para verificação. Assim, a linha \textit{dimensão} da tabela para estes algoritmos foi desconsiderada.
+
 \begin{figure}[h]
   \centering
-	\includegraphics[width=0.95\textwidth]{figuras/grafico}
-  \caption{Exemplo de amostra}
+	\includegraphics[width=\textwidth,angle=0]{figuras/grafico}
+  \caption{Amostra de comparação dos resultados}
   \label{fig:figuras_grafico}
 \end{figure}
 
-\lipsum[1]
+A \autoref{fig:figuras_grafico} apresenta um gráfico representativo da \autoref{tab:comparacao} com a supressão dos valores acima de 100  para melhor visualização.
+
+O que podemos observar deste trabalho é um resultado proporcional ao que se esperava, de quanto maior o trabalho ou a complexidade do algoritmo para ordenação, maior será o tempo necessário para a pesquisa, porém melhor serão os resultados obtidos na ordenação.
+
+Podemos compreender também por que o {\code apt-cache} é mais utilizado que o próprio {\code apt}. Por ordenar todos os pacotes que retornam da pesquisa sem considerar a \textit{string} de entrada, o {\code apt} em momento algum apresentou resultados melhores que o {\code apt-cache} e ainda gastava um tempo de resposta aproximadamente 3 vezes maior. Se o algoritmo de busca atual do {\code apt} fosse substituído pelo modelo do \textit{Exact Match}, ele apresentaria resultados melhores que o do {\code apt-cache} gastando cerca de $300$ ms a mais qu gasta atualmente. Porém, ambos algoritmos deixariam a desejar na apresentação de pacotes quando ocorresse uma escrita errada do pacote, visto que nenhum deles esta voltado para prever erros ortográficos.
+
+Uma situação ideal seria obter os resultados alcançados com o algoritmo de \textit{Smith-Waterman} com o tempo de resposta que o {\code apt-cache} leva atualmente. Porém a realidade é que o tempo gasto pelo algoritmo de \textit{Smith-Waterman} é hoje impraticável, visto que quanto maior o tamanho do nome do pacote, maior é o tempo de resposta, levando a gastar quase 1 minuto para uma busca pelo pacote {\code ncurses-base}. Porém o tempo gasto pelo algoritmo de 
+\textit{Levenshtein} se mostra valido para estudos de otimização e inclusão nas rotinas de busca quando retornar poucos pacotes ou nenhum pacote, considerando assim que possa ter acontecido um erro de digitação. Neste caso seria importante apresentar ao usuário que existe a possibilidade de escrita incorreta de pacote antes da apresentação dos resultados.
