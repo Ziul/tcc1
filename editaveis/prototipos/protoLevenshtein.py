@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from apt import Cache
-from pyxdameraulevenshtein import damerau_levenshtein_distance as ratio
+from Levenshtein import ratio
 from exact import Pack, _parser
 from multiprocessing.pool import ThreadPool as Pool
 
@@ -55,6 +55,6 @@ if __name__ == '__main__':
 
     # ultimo = time.time()
     lista = list(set(lista))
-    lista = sorted(lista)
+    lista = sorted(lista, reverse=True)
     for i in lista[:_options.amount]:
         print i

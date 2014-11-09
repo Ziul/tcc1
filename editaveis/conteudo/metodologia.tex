@@ -6,8 +6,8 @@
 % 	codificação
 % 	testes
 % 	levantamento de algoritmos
-% ferramentas utilizadas
-% ustificjustificativa das escolha dos metodos/algoritmos
+% 	ferramentas utilizadas
+% 	justificativa das escolha dos metodos/algoritmos
 % escolha dos pacotes para teste
 
 Observado a necessidade de métodos que apresentassem resultados mais intuitivos ao usuário, duas escolhas deviam ser tomadas para objetividade do estudo: a escolha da plataforma e gerenciador a adotado para base do estudo e qual linguagem seria adotada para o trabalho.
@@ -32,6 +32,16 @@ Devido o interesse no estudo seja apresentar alternativas para o modelo de busca
 
 Também foi utilizado o algoritmo de \textit{match} exato, o qual se idealiza na necessidade de ter a \textit{string} procurada presente no nome do pacote. Esta busca já é implementada no processo de \textit{search} do APT, porém ela aparece em segundo patamar de ordenação. Assim, foi implementado também um método de ordenação baseada apenas no \textit{match} exato  da \textit{string} de entrada pelo nome do pacote.
 
-% subsection implementa_o_dos_algoritmos (end)
+Definido os algoritmos que seriam utilizados no estudo, iniciou-se então a fase de prototipagem de código. O primeiro passo foi a familiarização com o pacote {\code apt}, disponibilizado por padrão na instalação do {\code python2.7} nas distribuições \textit{Debian-like}. Este pacote possibilita a busca, instalação e remoção de pacotes. Para tal foi utilizada a classe {\code apt.cache.Cache} que nos possibilita verificar a existência de um pacote na lista de candidatos por meio da interface {\code \_\_getitem\_\_} padrão do \textit{Python}. O \autoref{proto_apt} apresenta a versão final deste protótipo, onde se era testado por padrão no método a procura e instalação do pacote {\code git} enquanto na rotina principal se testava as mesmas rotinas para o inexistente pacote {\code gito}.
 
-% section m_todos_alternativos_de_ordena_o (end)
+
+
+O estudo deste pacote possibilitou a a evolução de um esqueleto de código que permitiria o teste dos distintos algoritmos de \textit{string-matching}. O primeiro a ser escrito foi o de \textit{match} exato, apresentado no \autoref{proto_exact}. Este esqueleto oferecia elementos básicos aos prototipos que seriam criados a seguir:
+
+\begin{description}
+	\item[Classe Pack] Classe básica construída para armazenar os resultados obtidos dos algoritmos e posteriormente ordena-los. É formada basicamente pelo método de formatação de impressão do pacote, o nome do pacote, o \textit{ratio} do pacote (usado para classificação) e os métodos que podem vir a ser utilizados pelas rotinas de ordenação de listas.
+	\item [\_parser] Objeto responsável por realizar o \textit{parser} das aplicações, oferecendo \textit{flags} de controle, como quantidade máxima a ser listada no resultado, \textit{ratio} mínimo a ser impresso, inclusão de prefixos e sufixos comuns ao nome do pacote procurado para classificação e a opção de executar um \textit{pool} de \textit{threads} na rotina a fim de agiliza-la. Esta última opção foi classificada como depreciada devido a instabilidade que gerava no momento de ordenação dos pacotes.
+\end{description}
+
+
+Este modelo foi fundamental para a escrita dos outros três protótipos deste trabalho, apresentados em \autoref{proto_leven}, \autoref{proto_damerau} e \autoref{proto_smith} no \autoref{anexos} deste documento. Como a estrutura do protótipo era mantida para os demais algoritmos, o único momento de retrabalho foi com o algoritmo de \textit{Smith-Waterman}, onde o pacote retornava uma lista de valores que deviam ser classificados, o que  necessitou a reescrita de um método de ordenação dos pacotes, já que para este algoritmo oferecido pelo pacote em especial não havia um retorno de uma simples distância ou \textit{ratio} de aproximação.

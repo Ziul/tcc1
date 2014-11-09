@@ -3,7 +3,6 @@
 Prototype code
 
 Prototype code to teste apk API
-
 """
 
 
@@ -20,15 +19,17 @@ def test_install(package_name="git"):
         raise error
 
     cache = apt.cache.Cache(progress.text.OpProgress())
-    cache.update(progress.base.AcquireProgress())
-    cache.open(progress.text.OpProgress())
 
     try:
+        cache.update(progress.base.AcquireProgress())
+        cache.open(progress.text.OpProgress())
         pkg = cache[package_name]
-    except KeyError, e:
+    except KeyError:
         print "{pkg_name}  not found".format(pkg_name=package_name)
         return
-    
+    except apt.cache.LockFailedException as arg:
+        print "Error: {err}".format(err=str(arg))
+        return
 
     if pkg.is_installed:
         print "{pkg_name} already installed".format(pkg_name=package_name)
@@ -45,8 +46,7 @@ def test_install(package_name="git"):
             try:
                 cache.commit(install_progress=progress.base.InstallProgress())
             except apt.cache.LockFailedException as arg:
-                print "Missing privilegies or another root user aready [{err}]".format(
-                    err=str(arg))
+                print "Error: {err}".format(err=str(arg))
         else:
             cache.clear()
 
