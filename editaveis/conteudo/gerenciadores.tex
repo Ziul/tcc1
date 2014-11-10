@@ -4,12 +4,16 @@
 \subsection{Contextualização} % (fold)
 \label{sec:breve_descri_o}
 
-Desde o lançamento das distribuições Debian e Slackware em 1993, diversas distribuições tiveram seu ciclo de vida realizado por completo, apresentando e amadurecendo a filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente de uma das principais distribuições: \textit{Debian, Red Hat, Slackware, Gentoo} ou \textit{Arch}.
-
+Desde o lançamento das distribuições \textit{Debian} e \textit{Slackware} em 1993, diversas distribuições tiveram seu ciclo de vida realizado por completo, apresentando e amadurecendo a filosofia por trás da distribuição, gerando novas ramificações e por fim sendo abandonadas. Hoje, se escolhermos alguma distribuição Linux dentre as inúmeras existentes, provavelmente ela será descendente de uma das principais distribuições: \textit{Debian, Red Hat} ou \textit{Slackware}
+.% ou \textit{Arch}, 
+A \autoref{fig:figuras_linux_timeline_heranca}, no \autoref{long_figures} apresenta um modelo de herança entre as distribuições Linux onde pode-se observar a influência que estas distribuições fazem a um grupo de novas distribuições que se ramificaram delas
+\footnote{Apesar da difícil visualização da imagem no documento, o intuito dela aqui é apresentar a vasta quantidade de distribuições que surgiram de bifurcações das distribuições \textit{Debian, Red Hat} e \textit{Slackware}, tal como alterações nelas provavelmente viriam a influenciar as demais distribuições.}.
 
 Em sistemas operacionais Linux, há muito foi proposto uma alternativa para distribuições de aplicações para o sistemas, chamados pacotes. A filosofia por trás da comunidade livre \cite{bretthauer2001open} e o interesse em buscar novas formas de armazenamento e distribuição de pacotes fez com que surgissem diversos \textit{gerenciadores de pacotes}, voltados à determinadas distribuição  cada \cite{beck2002linux}.
 
-Devido grande parte das distribuições hoje existentes serem ramificações das distribuições \textit{Debian, Red Hat, Slackware} ou \textit{Arch}, os diversos gerenciadores de pacotes hoje disponíveis também possuem muitas similaridades entre eles.
+Devido grande parte das distribuições hoje existentes serem ramificações das distribuições \textit{Debian, Red Hat} ou \textit{Slackware} 
+.% ou \textit{Arch}, 
+os diversos gerenciadores de pacotes hoje disponíveis também possuem muitas similaridades entre eles.
 É o caso do \textit{dpkg} e o \textit{rpm}, onde as funcionalidades de instalação, remoção e provimento de informações de pacotes esta presente em ambos. Ambos também são escritos predominantemente em \textit{C} e \textit{Perl}. Suas diferenças surgem quando chegamos a averiguar quais pacotes cada aplicação da suporte. O \textit{dpkg} esta voltado para os pacotes \textit{.deb}, enquanto o \textit{rpm} esta voltado para os pacotes \textit{rpm}. Como há uma distinção em como estes pacotes são montados \cite{bailey1997maximum}, há uma incompatibilidade entre as duas aplicações. 
 
 % TODO: Acrescentar um parágrafo citando alguns gerenciadores de pacotes e formatos (dpkg/deg, rpm, etc). %DONE
@@ -21,12 +25,12 @@ Devido grande parte das distribuições hoje existentes serem ramificações das
 % repositórios % DONE
 
 Um ponto de vista importante de ser caracterizado neste trabalho é a diferença entre os termos \textit{ gerenciadores de pacotes} e \textit{gerenciadores de repositórios}.
-É importante caracterizar a diferença estes dois termos comumente utilizados como sinônimos devido a sua similaridade. Suas proximidades são tão grandes que na própria documentação oficial do Debian não há uma caracterização de \textit{gerenciadores de repositórios}, citando apenas que gerenciadores como o {\code aptitude} ou {\code dselect} dependem do {\code APT}, que por sua vez depende do {\code dpkg} \cite{debian-faq}. Essa cadeia de dependências indicam as camadas de interface, onde o {\code dpkg} esta fortemente ligado aos pacotes a serem instalados ou removidos, enquanto o {\code APT} esta relacionado aos repositórios onde são armazenados os pacotes. Já aplicações como o {\code aptitude} ou o {\code synaptic} estão voltadas a produzirem uma camada mais \textit{friendly-user}, com interfaces visuais e menos poluição textual.
+É importante caracterizar a diferença estes dois termos comumente utilizados como sinônimos devido a sua similaridade. Suas proximidades são tão grandes que na própria documentação oficial do \textit{Debian} não há uma caracterização de \textit{gerenciadores de repositórios}, citando apenas que gerenciadores como o {\code aptitude} ou {\code dselect} dependem do {\code APT}, que por sua vez depende do {\code dpkg} \cite{debian-faq}. Essa cadeia de dependências indicam as camadas de interface, onde o {\code dpkg} esta fortemente ligado aos pacotes a serem instalados ou removidos, enquanto o {\code APT} esta relacionado aos repositórios onde são armazenados os pacotes. Já aplicações como o {\code aptitude} ou o {\code synaptic} estão voltadas a produzirem uma camada mais \textit{friendly-user}, com interfaces visuais e menos poluição textual.
 
 Assim, definimos o termo \textit{gerenciadores de pacotes} àquelas aplicações dedicadas unicamente à instalação e remoção de pacotes, enquanto \textit{gerenciadores de repositórios} serve de denominação para as aplicações voltadas ao controle da lista de repositórios de pacotes e interface  para instalação, remoção e pesquisa de pacotes, fazendo de uso dos \textit{gerenciadores de pacotes} quando necessário.
 
 Tendo em vista que este trabalho busca apresentar uma melhor solução para a ordenação de pacotes listados na resposta recebida em uma pesquisa realizada em um gerenciador de repositórios, devemos inicialmente elencar os possíveis candidatos a serem utilizados no trabalho.
-Sendo assim, os gerenciadores de repositórios que serão levados em consideração neste trabalho serão:
+% Sendo assim, os gerenciadores de repositórios que serão levados em consideração neste trabalho serão:
 
 % TODO Transformar cada item da descrição em uma subsubsection, com dois ou
 % três parágrafos (data de criação, autores, distros, principais vantagens/ 
@@ -35,7 +39,7 @@ Sendo assim, os gerenciadores de repositórios que serão levados em consideraç
 \input{editaveis/conteudo/apt}
 \input{editaveis/conteudo/yum}
 \input{editaveis/conteudo/portage}
-\input{editaveis/conteudo/pacman}
+% \input{editaveis/conteudo/pacman}
 
 \subsubsection{Comandos básicos} % (fold)
 \label{subs:comandos_basicos}
@@ -55,7 +59,7 @@ Por ser baseados em uma lista de repositórios, os \textit{gerenciadores de repo
 \textbf{\code APT} & {\code\# apt-get update}  \\ \hline
 \textbf{\code YUM} & {\code\# yum update}  \\ \hline
 \textbf{\code Emerge} & {\code\# emerge --sync}  \\ \hline
-\textbf{\code Pacman} & {\code\# pacman -Ss}  \\ \hline
+% \textbf{\code Pacman} & {\code\# pacman -Ss}  \\ \hline
 \end{tabular}
 \label{sync_gerenciadores}
 \end{table}
@@ -71,7 +75,7 @@ Pressupondo que os repositórios já estejam sincronizados na maquina local, é 
 \textbf{\code APT} & {\code\# apt-get install <pacote>} & {\code\# apt-get purge <pacote>} & {\code\$ apt-cache search <pacote>} \\ \hline
 \textbf{\code YUM} & {\code\# yum install <pacote>} & {\code\# yum purge <pacote>} & {\code\$ yum search <pacote>} \\ \hline
 \textbf{\code Emerge} & {\code\# emerge <pacote>} & {\code\# emerge remove <pacote>} & {\code\$ emerge search <pacote>} \\ \hline
-\textbf{\code Pacman} & {\code\# pacman -S <pacote>} & {\code\# pacman -Rc <pacote>} & {\code\$ pacman -Qi  <pacote>} \\ \hline
+% \textbf{\code Pacman} & {\code\# pacman -S <pacote>} & {\code\# pacman -Rc <pacote>} & {\code\$ pacman -Qi  <pacote>} \\ \hline
 \end{tabular}
 }
 \label{cmd_gerenciadores}
