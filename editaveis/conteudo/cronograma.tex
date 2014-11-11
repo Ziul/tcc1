@@ -1,14 +1,22 @@
 \chapter{Cronograma}
 \label{cha:cronograma}
 
+Abaixo segue o gráfico de \textit{gantt} de evolução do trabalho contabilizadas em semanas, com evolução de tarefas estimadas:
+
 \begin{ganttchart}[
 	%canvas/.style={fill=yellow!25,draw=blue, dashed, very thick}
-	hgrid=false,
+	hgrid=true,
 	vgrid={*1{blue, dotted}},
 	%vgrid={*2{red}, *1{green}, *{10}{blue, dashed}}
 	x unit = 8mm,
-]{35}{47}%{2014-08-28}{2013-08-13}}
-\gantttitle{Cronograma}{13} \\
+	today=47,
+	today label= 17 de novembro,
+	today label font=\itshape\color{red},
+	today rule/.style={draw=red, ultra thick, dashed},
+]{35}{48}%{2014-08-28}{2013-08-13}}
+\gantttitle{Semanas}{14} \\
+\gantttitlelist{1,...,14}{1}\\
+%\gantttitle{}{13} \\
 %
 \ganttgroup{Fundamentação}{35}{40} \\
 \ganttbar{1}{35}{36} \\ % Levantar documentação oficial das distribuições
@@ -16,7 +24,7 @@
 \ganttbar{3}{35}{36} \\ % Configurar maquinas Vagrant
 \ganttbar{4}{35}{38} \\ % Estudar documentação de String Matching
 %
-\ganttgroup{Prototipação}{40}{43} \\
+\ganttgroup{Prototipagem}{40}{43} \\
 \ganttbar{5}{40}{42} \\ % Escrever primeiro protótipo
 \ganttbar{6}{40}{42} \\ % Testar com 5 pacotes
 \ganttbar{7}{41}{43} \\ % Escrever segundo protótipo
@@ -31,20 +39,22 @@
 \ganttbar{14}{47}{47} \\ % Entrega
 \end{ganttchart}
 
-\textbf{Legenda:}
+\textbf{Legenda dos índices do gráfico:}
 \begin{description}
-\item [1]  Levantar documentação oficial das distribuições
-\item [2]  Levantar gerenciadores das principais distribuições Linux
-\item [3]  Configurar maquinas Vagrant
-\item [4]  Estudar documentação de String Matching
-\item [5]  Escrever primeiro protótipo
-\item [6]  Testar com 5 pacotes
-\item [7]  Escrever segundo protótipo
-\item [8]  Escrever terceiro protótipo
-\item [9]  Estruturar documento do TCC
-\item [10] Escrever fundamentação teórica
-\item [11] Escrita do TCC
-\item [12] Revisão do TCC
-\item [13] Produção da Apresentação
-\item [14] Entrega
+\item [1]  Levantar documentação oficial das distribuições.
+\item [2]  Levantar gerenciadores das principais distribuições Linux.
+\item [3]  Configurar maquinas \textit{Vagrant}.
+\item [4]  Estudar documentação de \textit{String Matching}.
+\item [5]  Escrever primeiro protótipo.
+\item [6]  Testar com 5 pacotes.
+\item [7]  Escrever segundo protótipo.
+\item [8]  Escrever terceiro protótipo.
+\item [9]  Estruturar documento do Trabalho de Conclusão de Curso.
+\item [10] Escrever fundamentação teórica.
+\item [11] Escrita do Trabalho de Conclusão de Curso.
+\item [12] Revisão do Trabalho de Conclusão de Curso.
+\item [13] Produção da Apresentação.
+\item [14] Entrega.
 \end{description}
+
+Este trabalho foi planejado com entregas semanais com três grandes frentes: estudo da fundamentação teórica, prototipagem e documentação. O gráfico de \textit{gantt} a seguir apresenta uma aproximação do desenvolvimento deste trabalho, tendo ocorrido algumas adaptações durante o período da fundamentação\footnote{Ate o desenvolvimento desta seção, o período de entrega ainda não havia ocorrido, fazendo com que a parte final do gráfico ainda seja estimada.}.
