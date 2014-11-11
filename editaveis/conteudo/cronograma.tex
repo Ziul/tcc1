@@ -1,70 +1,60 @@
 \chapter{Cronograma}
 \label{cha:cronograma}
 
-% \begin{ganttchart}[
-% 	hgrid=true,
-% 	vgrid={*1{red, dotted}}
-% ]{35}{47}%{2014-08-28}{2013-08-13}
-% \gantttitlecalendar{year, week=3}
-% \gantttitle{Cronograma}{13} \\
-% \ganttbar{1}{35}{36} \\ % Levantar documentação oficial das distribuições
-% \ganttbar{2}{35}{36} \\ % Levantar gerenciadores das principais distribuições Linux
-% \ganttbar{3}{35}{36} \\ % Configurar maquinas Vagrant
-% \ganttbar{4}{35}{38} \\ % Estudar documentação de String Matching
-% \ganttbar{5}{38}{40} \\ % Escrever fundamentação teórica
-
-% \ganttbar{6}{40}{42} \\ % Escrever primeiro protótipo
-% \ganttbar{7}{40}{42} \\ % Testar com 5 pacotes
-% \ganttbar{8}{41}{43} \\ % Escrever segundo protótipo
-% \ganttbar{9}{42}{43} \\ % Escrever terceiro protótipo
-
-% \ganttbar{10}{38}{40} \\ % Estruturar documento do TCC
-% \ganttbar{11}{43}{45} \\ % Escrita do TCC
-% \ganttbar{12}{45}{46} \\ % Revisão do TCC
-% \ganttbar{13}{45}{46} \\ % Produção da Apresentação
-% \ganttbar{14}{47}{47} \\ % Entrega
-% \end{ganttchart}
-
-\ganttset{%
-	calendar week text={%
-		\pgfcalendarmonthshortname
-		{\startmonth}~
-		\startday,
-		\startyear%
-	}%
-}
-
 \begin{ganttchart}[
-hgrid,
-vgrid,
-x unit = 4mm,
-time slot format=isodate,
-compress calendar
-]{2014-08-21}{2014-11-18}
-\gantttitlecalendar{year, week} \\
+	%canvas/.style={fill=yellow!25,draw=blue, dashed, very thick}
+	hgrid=false,
+	vgrid={*1{blue, dotted}},
+	%vgrid={*2{red}, *1{green}, *{10}{blue, dashed}}
+	x unit = 8mm,
+]{35}{47}%{2014-08-28}{2013-08-13}}
+\gantttitle{Cronograma}{13} \\
 %
-\ganttbar{1}{2014-08-21}{2014-08-28} \\ % Levantar documentação oficial das distribuições
-\ganttbar{2}{2014-08-21}{2014-08-28} \\ % Levantar gerenciadores das principais distribuições Linux
-\ganttbar{3}{2014-08-21}{2014-08-28} \\ % Configurar maquinas Vagrant
-\ganttbar{4}{2014-08-21}{2014-09-07} \\ % Estudar documentação de String Matching
-\ganttbar{5}{2014-09-07}{2014-10-02} \\ % Escrever fundamentação teórica
-\ganttbar{6}{2014-10-02}{2014-10-23} \\ % Escrever primeiro protótipo
-\ganttbar{7}{2014-10-02}{2014-10-23} \\ % Testar com 5 pacotes
-\ganttbar{8}{2014-10-16}{2014-10-30} \\ % Escrever segundo protótipo
-\ganttbar{9}{2014-10-23}{2014-10-30} \\ % Escrever terceiro protótipo
-\ganttbar{10}{2014-09-07}{2014-10-02} \\ % Estruturar documento do TCC
-\ganttbar{11}{2014-10-30}{2014-11-10} \\ % Escrita do TCC
-\ganttbar{12}{2014-11-10}{2014-11-17} \\ % Revisão do TCC
-\ganttbar{13}{2014-11-10}{2014-11-17} \\ % Produção da Apresentação
-\ganttbar{14}{2014-11-18}{2014-11-18}  % Entrega
+\ganttgroup{Fundamentação}{35}{40} \\
+\ganttbar{1}{35}{36} \\ % Levantar documentação oficial das distribuições
+\ganttbar{2}{35}{36} \\ % Levantar gerenciadores das principais distribuições Linux
+\ganttbar{3}{35}{36} \\ % Configurar maquinas Vagrant
+\ganttbar{4}{35}{38} \\ % Estudar documentação de String Matching
+%
+\ganttgroup{Prototipação}{40}{43} \\
+\ganttbar{5}{40}{42} \\ % Escrever primeiro protótipo
+\ganttbar{6}{40}{42} \\ % Testar com 5 pacotes
+\ganttbar{7}{41}{43} \\ % Escrever segundo protótipo
+\ganttbar{8}{42}{43} \\ % Escrever terceiro protótipo
+%
+\ganttgroup{Documentação}{38}{47} \\
+\ganttbar{9}{38}{40} \\ % Estruturar documento do TCC
+\ganttbar{10}{38}{40} \\ % Escrever fundamentação teórica
+\ganttbar{11}{43}{45} \\ % Escrita do TCC
+\ganttbar{12}{45}{46} \\ % Revisão do TCC
+\ganttbar{13}{45}{46} \\ % Produção da Apresentação
+\ganttbar{14}{47}{47} \\ % Entrega
 \end{ganttchart}
 
-\begin{ganttchart}[
-hgrid,
-vgrid,
-time slot format=isodate-yearmonth,
-compress calendar
-]{2014-01}{2014-5}
-\gantttitlecalendar{year, month} \\
-\ganttbar{1}{2014-01}{2014-05}
-\end{ganttchart}
+% \begin{ganttchart}[
+% hgrid,
+% vgrid,
+% x unit = 2cm,
+% time slot format=little-endian,
+% compress calendar
+% ]{2014-08-21}{2014-11-18}
+% %\gantttitlecalendar{week} \\
+% \gantttitlecalendar{year, month} \\
+% %
+% \ganttgroup{Prototipação}{2014-08-21}{2014-10-30} \\
+% \ganttbar{1}{2014-08-21}{2014-08-28} \\ % Levantar documentação oficial das distribuições
+% \ganttbar{2}{2014-08-21}{2014-08-28} \\ % Levantar gerenciadores das principais distribuições Linux
+% \ganttbar{3}{2014-08-21}{2014-08-28} \\ % Configurar maquinas Vagrant
+% \ganttbar{4}{2014-08-21}{2014-09-07} \\ % Estudar documentação de String Matching
+% \ganttbar{5}{2014-09-07}{2014-10-02} \\ % Escrever fundamentação teórica
+% \ganttbar{6}{2014-10-02}{2014-10-23} \\ % Escrever primeiro protótipo
+% \ganttbar{7}{2014-10-02}{2014-10-23} \\ % Testar com 5 pacotes
+% \ganttbar{8}{2014-10-16}{2014-10-30} \\ % Escrever segundo protótipo
+% \ganttbar{9}{2014-10-23}{2014-10-30} \\ % Escrever terceiro protótipo
+% \ganttgroup{Documentação}{2014-09-07}{2014-11-17} \\
+% \ganttbar{10}{2014-09-07}{2014-10-02} \\ % Estruturar documento do TCC
+% \ganttbar{11}{2014-10-30}{2014-11-10} \\ % Escrita do TCC
+% \ganttbar{12}{2014-11-10}{2014-11-17} \\ % Revisão do TCC
+% \ganttbar{13}{2014-11-10}{2014-11-17} \\ % Produção da Apresentação
+% \ganttbar{14}{2014-11-18}{2014-11-18}  % Entrega
+% \end{ganttchart}
