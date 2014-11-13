@@ -52,12 +52,15 @@ Por ser baseados em uma lista de repositórios, os \textit{gerenciadores de repo
 \begin{table}[htbp]
 \caption{Comandos para atualização do banco de dados dos gerenciadores de repositórios mais populares.}
 \centering
-\begin{tabular}{|l|l|}
-\hline
-& \textbf{Atualizar banco de dados} \\ \hline
-\textbf{\code APT} & {\code\# apt-get update}  \\ \hline
-\textbf{\code YUM} & {\code\# yum update}  \\ \hline
-\textbf{\code Emerge} & {\code\# emerge --sync}  \\ \hline
+\begin{tabular}{ll}
+\toprule
+\textbf{Gerenciador de Repositórios} & \textbf{Commando} \\ 
+\midrule
+\textbf{\code APT} & {\code\# apt-get update}  \\ 
+\rowcolor[gray]{0.8}
+\textbf{\code YUM} & {\code\# yum update}  \\ 
+\textbf{\code Emerge} & {\code\# emerge --sync}  \\ 
+\bottomrule
 % \textbf{\code Pacman} & {\code\# pacman -Ss}  \\ \hline
 \end{tabular}
 \label{sync_gerenciadores}

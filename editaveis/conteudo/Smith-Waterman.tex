@@ -20,7 +20,6 @@ Considerando as \textit{strings} $a$ e $b$ de tamanhos $n,m$ respectivamente e $
 \end{equation*}
 
 Valores preliminares de $H$ tem a interpretação de que $H_{ij}$ tem a máxima similaridade de duas \textit{strings} que possuem final $a_i$ e $b_j$ respectivamente. Os valores de $H_ij$ podem ser obtidos através da relação:
-
 % \begin{align*}
 % 	H(i,0) =& 0, 0 \leq i \leq m \\
 % 	H(0,j) =& 0, 0 \leq j \leq n \\
@@ -32,20 +31,17 @@ Valores preliminares de $H$ tem a interpretação de que $H_{ij}$ tem a máxima 
 % 	\end{Bmatrix},\\
 % 	1 \leq i \leq n& \text{ e } 1 \leq j \leq m
 % \end{align*}
-
-\begin{align*}
-	H(i,0) =& 0, 0 \leq i \leq m \\
-	H(0,j) =& 0, 0 \leq j \leq n \\
-	H(i,j) =& \text{max}
-	\begin{Bmatrix}
-		H_{i-1,j-1} + s(a_i,b_j) ,\\
-		\underset{k\geq1}{\text{max}} \left\{H_{i-k,j} - W_k\right\} ,\\
-		\underset{l\geq1}{\text{max}} \left\{H_{i,j-l} - W_l\right\} ,\\
-		0
-	\end{Bmatrix},\\
-	1 \leq i \leq n& \text{ e } 1 \leq j \leq m
-\end{align*}
-
+\begin{eqnarray*}
+	H(i,0) &=& 0, \, \, \, \, 0 \leq i \leq m \\
+	H(0,j) &=& 0, \, \, \, \, 0 \leq j \leq n \\
+	H(i,j) &=& \text{max}\lbrace A(i,j), B(i,j), C(i,j), 0\rbrace, \, \, \, \, 1 \leq i \leq n \text{ e } 1 \leq j \leq m
+\end{eqnarray*}
+onde
+\begin{eqnarray*}
+		A(i, j) &=& H_{i-1,j-1} + s(a_i,b_j) \\
+		B(i, j) &=& \underset{k\geq1}{\text{max}} \left\{H_{i-k,j} - W_k\right\}\\ 
+		C(i, j) &=& \underset{l\geq1}{\text{max}} \left\{H_{i,j-l} - W_l\right\}
+\end{eqnarray*}
 
 Montada a matriz $H$, para obter o melhor alinhamento, o algoritmo dita começar com o maior valor na matriz $(i,j)$, vá então retornando em sentido a célula $(0,0)$, seguindo pelos pontos $(i - 1,j), (i, j - 1)$, ou $(i - 1, j - 1)$.
 
