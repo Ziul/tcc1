@@ -10,14 +10,30 @@
 % 	justificativa das escolha dos metodos/algoritmos
 % escolha dos pacotes para teste
 
+\section{Levantamento bibliográfico} % (fold)
+\label{sec:levantamento_bibliogr_fico}
+
+Com o auxilio de ambientes como o Periódicos Capes, \textit{ebrary} e Google Acadêmico, foi levantado estudos em \textit{string matching} que pudessem vir a ser interessantes para a ordenação dos candidatos.  Por ser uma área estudada ate mesmo antes da modernização e popularização de computadores sejam por fins militares ou puramente científicos, este foi um dos pontos de difícil escolha de métodos devido a vasta diversidade da qual se é possível encontrar. Guiados por estudos recentes como o de Xu \cite{xu2013bit} com processamento usando GPUs ou mais antigos como o de Galil \cite{galil1988data}, um dos nomes que normalmente eram citados era o de Levenshtein e seu trabalho de 1966 \cite{levenshtein1966}. Este algoritmo por si só apontou outras duas alternativas, sendo uma delas uma variação do primeiro para maior exatidão de resultados. Assim, o levantamento indicava três algoritmos como candidatos para a solução do trabalho proposto. O algoritmo de \textit{Smith-Waterman}, a distância de \textit{Levenshtein} e sua variação na distância de \textit{Damerau-Levenshtein}.
+
+% section levantamento_bibliogr_fico (end)
+
+
+\section{Ferramentas} % (fold)
+\label{sec:codifica_o}
+
 Observado a necessidade de métodos que apresentassem resultados mais intuitivos ao usuário, duas escolhas deviam ser tomadas para objetividade do estudo: a escolha da plataforma e gerenciador a adotado para base do estudo e qual linguagem seria adotada para o trabalho.
 
-Dentre os grandes grupos que a comunidade Linux se divide, distribuições oriundas do \textit{Debian} e do \textit{Slackware} são as predominantes. Dentre estas duas e suas ramificações, o Ubuntu é uma das distribuições mais indicadas e adotadas por pessoas que estão adentrando no mundo Linux. Desta forma o \textit{APT} torna-se o candidato escolhido dentro o grupo de gerenciadores de repositórios de pacotes.
-
+Dentre os grandes grupos que a comunidade Linux se divide, distribuições oriundas do \textit{Debian} e do \textit{Slackware} são as predominantes. Dentre estas duas e suas ramificações, o Ubuntu é uma das distribuições mais indicadas e adotadas por pessoas que estão adentrando no mundo Linux. Desta forma o \textit{APT} torna-se o candidato escolhido dentro o grupo de gerenciadores de repositórios de pacotes. Como distribuição adotada então para desenvolvimento e teste no estudo, foi adotada o Ubuntu 14.04.
 
 Para uma agilização na obtenção de resultados para os objetivos, foi adotada a linguagem \textit{Python} por apresentar uma interface de interação com o gerenciador de pacote escolhido para uso neste trabalho, \nameref{subs:apt} e por ser de fácil prototipagem de código ao proporcionar um rápido e enxuto desenvolvimento de código. 
 
-Partindo deste ponto, foram localizados algoritmos de ordenação de \textit{strings} apresentados em artigos e revistas cientificas. Por ser uma área estudada ate mesmo antes da modernização e popularização de computadores sejam por fins militares ou puramente científicos, este foi um dos pontos de difícil escolha de métodos devido a vasta diversidade da qual se é possível encontrar. Guiados por estudos recentes como o de Xu \cite{xu2013bit} com processamento usando GPUs ou mais antigos como o de Galil \cite{galil1988data}, um dos nomes que normalmente eram citados era o de Levenshtein e seu trabalho de 1966 \cite{levenshtein1966}. Este algoritmo por si só apontou outras duas alternativas, sendo uma delas uma variação do primeiro para maior exatidão de resultados. 
+
+\section{Codificação} % (fold)
+\label{sec:codifica_o}
+
+
+% section codifica_o (end)
+
 
 Devido o interesse no estudo seja apresentar alternativas para o modelo de busca apresentado hoje no gerenciador e não novos algoritmos de aproximação de \textit{string}, foram priorizados algoritmos de implementação pouco rebuscada, que apresentassem bons resultados de ordenação de \textit{strings} e que já estivessem implementados em linguagem \textit{Python}. Desta forma, foram escolhidos três algoritmos disponibilizados no \href{https://pypi.python.org/}{PyPI}. São eles:
 
@@ -31,6 +47,8 @@ Devido o interesse no estudo seja apresentar alternativas para o modelo de busca
 \end{itemize}
 
 Também foi utilizado o algoritmo de \textit{match} exato, o qual se idealiza na necessidade de ter a \textit{string} procurada presente no nome do pacote. Esta busca já é implementada no processo de \textit{search} do APT, porém ela aparece em segundo patamar de ordenação. Assim, foi implementado também um método de ordenação baseada apenas no \textit{match} exato  da \textit{string} de entrada pelo nome do pacote.
+
+
 
 Definido os algoritmos que seriam utilizados no estudo, iniciou-se então a fase de prototipagem de código. O primeiro passo foi a familiarização com o pacote {\code apt}, disponibilizado por padrão na instalação do {\code python2.7} nas distribuições \textit{Debian-like}. Este pacote possibilita a busca, instalação e remoção de pacotes. Para tal foi utilizada a classe {\code apt.cache.Cache} que nos possibilita verificar a existência de um pacote na lista de candidatos por meio da interface {\code \_\_getitem\_\_} padrão do \textit{Python}. O \autoref{proto_apt} apresenta a versão final deste protótipo, onde se era testado por padrão no método a procura e instalação do pacote {\code git} enquanto na rotina principal se testava as mesmas rotinas para o inexistente pacote {\code gito}.
 
