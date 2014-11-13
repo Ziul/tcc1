@@ -71,12 +71,13 @@ Pressupondo que os repositórios já estejam sincronizados na maquina local, é 
 \begin{table}[htbp]
 \caption{Principais comandos dos gerenciadores de repositórios mais populares.}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{|l|l|l|l|}
-\hline
- & \multicolumn{1}{c|}{\textbf{Instalar}} & \multicolumn{1}{c|}{\textbf{Remover}} & \multicolumn{1}{c|}{\textbf{Procurar}} \\ \hline
-\textbf{\code APT} & {\code\# apt-get install <pacote>} & {\code\# apt-get purge <pacote>} & {\code\$ apt-cache search <pacote>} \\ \hline
-\textbf{\code YUM} & {\code\# yum install <pacote>} & {\code\# yum purge <pacote>} & {\code\$ yum search <pacote>} \\ \hline
-\textbf{\code Emerge} & {\code\# emerge <pacote>} & {\code\# emerge remove <pacote>} & {\code\$ emerge search <pacote>} \\ \hline
+\begin{tabular}{llll}
+\toprule
+ \multicolumn{1}{c}{\textbf{Gerenciador}} & \multicolumn{1}{c}{\textbf{Instalar}} & \multicolumn{1}{c}{\textbf{Remover}} & \multicolumn{1}{c}{\textbf{Procurar}} \\ \midrule
+\textbf{\code APT} & {\code\# apt-get install <pacote>} & {\code\# apt-get purge <pacote>} & {\code\$ apt-cache search <pacote>} \\ \rowcolor[gray]{0.8}
+\textbf{\code YUM} & {\code\# yum install <pacote>} & {\code\# yum purge <pacote>} & {\code\$ yum search <pacote>} \\ 
+
+\textbf{\code Emerge} & {\code\# emerge <pacote>} & {\code\# emerge remove <pacote>} & {\code\$ emerge search <pacote>} \\ \bottomrule
 % \textbf{\code Pacman} & {\code\# pacman -S <pacote>} & {\code\# pacman -Rc <pacote>} & {\code\$ pacman -Qi  <pacote>} \\ \hline
 \end{tabular}
 }
