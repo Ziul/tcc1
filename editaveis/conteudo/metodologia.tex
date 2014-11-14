@@ -23,19 +23,23 @@ Com o auxilio de ambientes como o Periódicos Capes, \textit{ebrary} e Google Ac
 
 Observado a necessidade de métodos que apresentassem resultados mais intuitivos ao usuário, duas escolhas deviam ser tomadas para objetividade do estudo: a escolha da plataforma e gerenciador a adotado para base do estudo e qual linguagem seria adotada para o trabalho.
 
-Dentre os grandes grupos que a comunidade Linux se divide, distribuições oriundas do \textit{Debian} e do \textit{Slackware} são as predominantes. Dentre estas duas e suas ramificações, o Ubuntu é uma das distribuições mais indicadas e adotadas por pessoas que estão adentrando no mundo Linux. Desta forma o \textit{APT} torna-se o candidato escolhido dentro o grupo de gerenciadores de repositórios de pacotes. Como distribuição adotada então para desenvolvimento e teste no estudo, foi adotada o Ubuntu 14.04.
+Dentre os grandes grupos que a comunidade Linux se divide, distribuições oriundas do \textit{Debian} e do \textit{Slackware} são as predominantes. Dentre estas duas e suas ramificações, o Ubuntu é uma das distribuições mais indicadas e adotadas por pessoas que estão adentrando no mundo Linux. Desta forma o \textit{APT} torna-se o candidato escolhido dentro o grupo de gerenciadores de repositórios de pacotes. Como distribuição adotada então para desenvolvimento e teste no estudo, foi adotada o Ubuntu 14.04. 
 
-Para uma agilização na obtenção de resultados para os objetivos, foi adotada a linguagem \textit{Python} por apresentar uma interface de interação com o gerenciador de pacote escolhido para uso neste trabalho, \nameref{subs:apt} e por ser de fácil prototipagem de código ao proporcionar um rápido e enxuto desenvolvimento de código. 
+Para uma agilização na obtenção de resultados para os objetivos, foi adotada a linguagem \textit{Python} por apresentar uma interface de interação com o gerenciador de pacote escolhido para uso neste trabalho, \nameref{subs:apt} e por ser de fácil prototipagem de código ao proporcionar um rápido e enxuto desenvolvimento de código. Para a edição de texto foi utilizado o \textit{Sublime-Text 2} com plugins do \textit{pylint} e \textit{PEP8} na tentativa de manter a padronização de código, documentação, coesão e coerência do protótipo.
+
+Como forma de controle do tempo e no intuito de manter o desenvolvimento mais proximo do planejado, foi utilizado o \href{https://trello.com}{Trello} para lanças as atividade e definir as datas limites para entregas, fazendo com que a metodologia aproximasse à programação extrema (eXtreme Programming) ao apresentar contextos como fases pequenas (uma ou duas semanas), \textit{design} simples, padronização e refatoração de código.
 
 
-\section{Codificação} % (fold)
-\label{sec:codifica_o}
+%\section{Codificação} % (fold)
+%\label{sec:codifica_o}
 
 
 % section codifica_o (end)
 
+\section{Algoritmos Propostos} % (fold)
+\label{sec:algoritmos_propostos}
 
-Devido o interesse no estudo seja apresentar alternativas para o modelo de busca apresentado hoje no gerenciador e não novos algoritmos de aproximação de \textit{string}, foram priorizados algoritmos de implementação pouco rebuscada, que apresentassem bons resultados de ordenação de \textit{strings} e que já estivessem implementados em linguagem \textit{Python}. Desta forma, foram escolhidos três algoritmos disponibilizados no \href{https://pypi.python.org/}{PyPI}. São eles:
+O interesse no estudo seja apresentar alternativas para o modelo de busca apresentado hoje no gerenciador e não novos algoritmos de aproximação de \textit{string}, foram priorizados algoritmos de implementação pouco rebuscada, que apresentassem bons resultados de ordenação de \textit{strings} e que já estivessem implementados em linguagem \textit{Python}. Desta forma, foram escolhidos três algoritmos disponibilizados no \href{https://pypi.python.org/}{PyPI}. São eles:
 
 \begin{itemize}
 	\item \href{https://pypi.python.org/pypi/swalign/}{swalign}\\
@@ -49,6 +53,7 @@ Devido o interesse no estudo seja apresentar alternativas para o modelo de busca
 Também foi utilizado o algoritmo de \textit{match} exato, o qual se idealiza na necessidade de ter a \textit{string} procurada presente no nome do pacote. Esta busca já é implementada no processo de \textit{search} do APT, porém ela aparece em segundo patamar de ordenação. Assim, foi implementado também um método de ordenação baseada apenas no \textit{match} exato  da \textit{string} de entrada pelo nome do pacote.
 
 
+\section{Execução dos experimentos}
 
 Definido os algoritmos que seriam utilizados no estudo, iniciou-se então a fase de prototipagem de código. O primeiro passo foi a familiarização com o pacote {\code apt}, disponibilizado por padrão na instalação do {\code python2.7} nas distribuições \textit{Debian-like}. Este pacote possibilita a busca, instalação e remoção de pacotes. Para tal foi utilizada a classe {\code apt.cache.Cache} que nos possibilita verificar a existência de um pacote na lista de candidatos por meio da interface {\code \_\_getitem\_\_} padrão do \textit{Python}. O \autoref{proto_apt} apresenta a versão final deste protótipo, onde se era testado por padrão no método a procura e instalação do pacote {\code git} enquanto na rotina principal se testava as mesmas rotinas para o inexistente pacote {\code gito}.
 
@@ -63,3 +68,5 @@ O estudo deste pacote possibilitou a a evolução de um esqueleto de código que
 
 
 Este modelo foi fundamental para a escrita dos outros três protótipos deste trabalho, apresentados em \autoref{proto_leven}, \autoref{proto_damerau} e \autoref{proto_smith} no \autoref{anexos} deste documento. Como a estrutura do protótipo era mantida para os demais algoritmos, o único momento de retrabalho foi com o algoritmo de \textit{Smith-Waterman}, onde o pacote retornava uma lista de valores que deviam ser classificados, o que  necessitou a reescrita de um método de ordenação dos pacotes, já que para este algoritmo oferecido pelo pacote em especial não havia um retorno de uma simples distância ou \textit{ratio} de aproximação.
+
+Também foi implementada a possibilidade de uso do padrão \textit{thread pool} para agilizar os resultados. Todavia, foi encontrada a dificuldade em manter a ordenação das listas, fazendo com que a opção fosse descontinuada ate segundo momento, porém não totalmente descartada, visto que em alguns testes houve redução de aproximadamente um terço do tempo gasto sem o uso de \textit{threads}. 
