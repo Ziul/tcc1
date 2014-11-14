@@ -69,4 +69,16 @@ O estudo deste pacote possibilitou a a evolução de um esqueleto de código que
 
 Este modelo foi fundamental para a escrita dos outros três protótipos deste trabalho, apresentados em \autoref{proto_leven}, \autoref{proto_damerau} e \autoref{proto_smith} no \autoref{anexos} deste documento. Como a estrutura do protótipo era mantida para os demais algoritmos, o único momento de retrabalho foi com o algoritmo de \textit{Smith-Waterman}, onde o pacote retornava uma lista de valores que deviam ser classificados, o que  necessitou a reescrita de um método de ordenação dos pacotes, já que para este algoritmo oferecido pelo pacote em especial não havia um retorno de uma simples distância ou \textit{ratio} de aproximação.
 
+
+Para a obtenção dos resultados, foi utilizado um {\code Core™ i7 CPU 870} (\textit{2.93GHz})  e $3.8GB$ de RAM rodando sistema Ubuntu 14.04 LTS 64-bits. Os comandos foram todos executados em primeiro plano sem outra aplicação rodando em conjunto e foram-se efetuados cinco medidas consecutivas do tempo e retirada a média entre elas. A medida de tempo foi obtida executando a chamada das aplicações precedidas do comando {\code time} e tomado como resultado o valor retornado para o usuário. Na \autoref{fig:figuras_xpto} é possível observar um exemplo da procura pelo pacote \textit{xpto} no {\code apt}. Neste exemplo, o valor que seria considerado seria o de $890$ ms.
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.8\textwidth]{figuras/xpto}
+  \caption{Exemplo do uso do comando {\code time}}
+  \label{fig:figuras_xpto}
+\end{figure}
+
+\section{Funcionalidades descartadas}
+
 Também foi implementada a possibilidade de uso do padrão \textit{thread pool} para agilizar os resultados. Todavia, foi encontrada a dificuldade em manter a ordenação das listas, fazendo com que a opção fosse descontinuada ate segundo momento, porém não totalmente descartada, visto que em alguns testes houve redução de aproximadamente um terço do tempo gasto sem o uso de \textit{threads}. 
