@@ -1,5 +1,7 @@
 #TCC FGA-UnB
 
+[![Build Status](https://travis-ci.org/Ziul/latex-tcc.svg)](https://travis-ci.org/Ziul/latex-tcc)
+
 Trabalho de Conclusão de Curso (TCC) na Faculdade do Gama (FGA) em Latex para o curso de Engenharia de Software.
 
 Licenciado em  [Creative Commons Atribuição 3.0](http://creativecommons.org/licenses/by/3.0/).
