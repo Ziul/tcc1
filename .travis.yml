@@ -1,8 +1,9 @@
 install:
+  - sudo add-apt-repository ppa:texlive-backports/ppa 
+  - sudo apt-get update && sudo apt-get install abntex2
   - sudo apt-get install ttf-sil-gentium ttf-sil-gentium-basic
   - sudo apt-get install texlive-fonts-extra ttf-inconsolata ttf-droid
   - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra
-  - sudo apt-get install abntex
 
 script:
   - make
