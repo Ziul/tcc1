@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-Exact match package
+Code to rank packages from a search in APT using  exact match
 """
 
 from apt import Cache
 import optparse
-import swalign
 from multiprocessing.pool import ThreadPool as Pool
 _MAX_PEERS = 20
 
 
 class Pack(object):
 
-    """docstring for Pack"""
+    """Class to handle the package object"""
     name = ''
     ratio = 0
 
@@ -88,10 +87,12 @@ _parser.add_option("--multi",
 
 
 def _cmp(pack, other):
+    """ Ovewriting for compare method"""
     return pack.name < other.name
 
 
-def ThreadExact(k):
+def Thread_Exact(k):
+    """ Method to be done by a thread from the pool"""
     pack = args[0]
     if pack in k:
         item = Pack()
@@ -101,7 +102,8 @@ def ThreadExact(k):
     return None
 
 
-def ExactMatch(pack):
+def Exact_Match(pack):
+    """ Method to execute the exact matching """
     cache = Cache()
     if _options.single:
         list_app = []
@@ -114,7 +116,7 @@ def ExactMatch(pack):
         return list_app
     else:
         _pool = Pool(processes=_MAX_PEERS)
-        result = _pool.map(ThreadExact, cache._set)
+        result = _pool.map(Thread_Exact, cache._set)
         return result
 
 if __name__ == '__main__':
@@ -125,19 +127,19 @@ if __name__ == '__main__':
 
     _options.suffix = _options.prefix = False
 
-    lista = ExactMatch(package_name)
+    lista = Exact_Match(package_name)
     if _options.suffix:
         for suffix in suffixes:
-            matches = ExactMatch('{}-{}'.format(package_name, suffix))
+            matches = Exact_Match('{}-{}'.format(package_name, suffix))
             lista.extend(matches)
     if _options.prefix:
         for prefix in prefixes:
-            matches = ExactMatch('{}{}'.format(prefix, package_name))
+            matches = Exact_Match('{}{}'.format(prefix, package_name))
             lista.extend(matches)
     if _options.suffix and _options.prefix:
         for suffix in suffixes:
             for prefix in prefixes:
-                matches = ExactMatch(
+                matches = Exact_Match(
                     '{}{}-{}'.format(prefix, package_name, suffix))
                 lista.extend(matches)
 
