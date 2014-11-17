@@ -8,6 +8,7 @@ _MAX_PEERS = 20
 
 
 def _cmp(x, y):
+    """ Ovewriting for compare method"""
     if x.ratio[0] == y.ratio[0]:
         if x.ratio[1] == y.ratio[1]:
             if x.ratio[2] == y.ratio[2]:
@@ -31,7 +32,8 @@ def _cmp(x, y):
         return 1
 
 
-def ThreadAlign(k):
+def Thread_Align(k):
+    """ Method to be done by a thread from the pool"""
     pack = _args[0]
     item = Pack()
     item.name = k
@@ -42,6 +44,7 @@ def ThreadAlign(k):
 
 
 def SmithWaterman(pack):
+    """ Method to execute the algorithm """
     cache = Cache()
     if _options.single:
         list_app = []
@@ -55,7 +58,7 @@ def SmithWaterman(pack):
         return list_app
     else:
         _pool = Pool(processes=_MAX_PEERS)
-        result = _pool.map(ThreadAlign, cache._set)
+        result = _pool.map(Thread_Align, cache._set)
         return result
 
 if __name__ == '__main__':
