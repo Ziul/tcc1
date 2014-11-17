@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+    Code to rank packages from a search in APT using  Levenshtein
+"""
 from apt import Cache
 from Levenshtein import ratio
 from exact import Pack, _parser
@@ -7,7 +10,7 @@ from multiprocessing.pool import ThreadPool as Pool
 _MAX_PEERS = 20
 
 
-def ThreadRank(k):
+def Thread_Rank(k):
     pack = _args[0]
     item = Pack()
     item.name = k
@@ -27,11 +30,10 @@ def Rankilist(pack):
         return list_app
     else:
         _pool = Pool(processes=_MAX_PEERS)
-        result = _pool.map(ThreadRank, cache._set)
+        result = _pool.map(Thread_Rank, cache._set)
         return result
 
 if __name__ == '__main__':
-    from sys import argv
     (_options, _args) = _parser.parse_args()
     package_name = _args[0]
     suffixes = ['core', 'dev', 'commom', 'devel']
