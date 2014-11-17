@@ -12,7 +12,7 @@
 % perl-base
 % mount
 % gzip
-
+Para validação dos protótipos, foram escolhidos 7 (sete) dentre os 30 (trinta) pacotes mais instalados segundo o \href{http://popcon.ubuntu.com/}{Popcorn-Ubuntu} e realizado o teste de busca com cada um destes e os protótipos. Para efeito de comparação, os testes foram realizados também com o {\code apt} e o {\code apt-cache}. Os tempos obtidos foram apresentados na \autoref{tab:comparacao}. Para uma melhor apresentação dos dados, buscas com mais de $100$  resultados foram desconsiderados e identificadas no final da tabela. As opções de uso de \textit{pool de threads} não foram utilizadas devido a sua instabilidade no momento de ordenação dos resultados.
 
 \begin{table}[htbp]
 \caption{Comparação de resultados}
@@ -21,24 +21,31 @@
 \toprule
 \multicolumn{ 2}{c}{\textbf{Pacote}} & \textbf{apt} & \textbf{apt-cache} & \textbf{Exact Match} & \textbf{Levenshtein} & \textbf{Smith-Waterman} \\ \midrule
 \multicolumn{ 1}{c}{} & \textit{posição} & 27 & 3 & 1 & 1 & 1 \\ 
+\rowcolor[gray]{0.9}
 \multicolumn{ 1}{c}{\textbf{ncurses-base}} & \textit{dimensão} & 37 & 37 & 1 & $-$ & $-$ \\ 
 \multicolumn{ 1}{c}{} & \textit{tempo [s]} & 0.874 & 0.349 & 1.146 & 9.539 & 52.212 \\ \hline
 \multicolumn{ 1}{c}{} & \textit{posição} & *** & *** & 48 & 1 & 1 \\ 
+\rowcolor[gray]{0.9}
 \multicolumn{ 1}{c}{\textbf{sed}} & \textit{dimensão} & *** & *** & * & $-$ & $-$ \\ 
 \multicolumn{ 1}{l}{} & \textit{tempo [s]} & 0.968 & 0.358 & 1.102 & 9.125 & 16.421 \\ \hline
 \multicolumn{ 1}{c}{} & \textit{posição} & 6 & 1 & 1 & 2 & 1 \\ 
+\rowcolor[gray]{0.9}
 \multicolumn{ 1}{c}{\textbf{bash}} & \textit{dimensão} & * & * & 13 & $-$ & $-$ \\ 
 \multicolumn{ 1}{c}{} & \textit{tempo [s]} & 0.901 & 0.335 & 1.142 & 9.343 & 20.518 \\ \hline
 \multicolumn{ 1}{c}{} & \textit{posição} & *** & * & * & 2 & 1 \\ 
+\rowcolor[gray]{0.9}
 \multicolumn{ 1}{c}{\textbf{tar}} & \textit{dimensão} & * & * & * & $-$ & $-$ \\ 
 \multicolumn{ 1}{c}{} & \textit{tempo [s]} & 0.923 & 0.373 & 1.137 & 9.028 & 16.02 \\ \hline
 \multicolumn{ 1}{c}{} & \textit{posição} & 13 & 2 & 1 & 1 & 1 \\ 
+\rowcolor[gray]{0.9}
 \multicolumn{ 1}{c}{\textbf{perl-base}} & \textit{dimensão} & 16 & 16 & 2 & $-$ & $-$ \\ 
 \multicolumn{ 1}{c}{} & \textit{tempo [s]} & 0.936 & 0.311 & 1.116 & 9.36 & 41.548 \\ \hline
 \multicolumn{ 1}{c}{} & \textit{posição} & * & 52 & 23 & 1 & 1 \\ 
+\rowcolor[gray]{0.9}
 \multicolumn{ 1}{c}{\textbf{mount}} & \textit{dimensão} & * & * & 37 & $-$ & $-$ \\ 
 \multicolumn{ 1}{c}{} & \textit{tempo [s]} & 0.895 & 0.338 & 1.121 & 9.082 & 24.848 \\ \hline
 \multicolumn{ 1}{c}{} & \textit{posição} & 23 & 5 & 1 & 1 & 1 \\ 
+\rowcolor[gray]{0.9}
 \multicolumn{ 1}{c}{\textbf{gzip}} & \textit{dimensão} & * & * & 5 & $-$ & $-$ \\ 
 \multicolumn{ 1}{c}{} & \textit{tempo [s]} & 0.876 & 0.324 & 1.103 & 9.482 & 20.163 \\ \bottomrule
 \end{tabular}
@@ -59,7 +66,6 @@
 % \footnotetext{\label{tab:comparacao_footnote}Ordenado pelo número de pessoas que instalaram o pacote.}
 
 
-Tomados os devidos valores, foi montada então a \autoref{tab:comparacao} com 7 (sete) dentre os 30 (trinta) pacotes mais instalados segundo o \href{http://popcon.ubuntu.com/}{Popcorn-Ubuntu}. Para uma melhor apresentação dos dados, valores acima de $100$ foram desconsiderados e as opções de uso de \textit{pool de threads} não foram utilizadas.
 
 O que  podemos observar  segundo a \autoref{tab:comparacao} é um certa deficiência em apresentar os pacotes realmente desejados no topo da lista de possibilidades quando se trata dos métodos padrões de busca, {\code apt} e {\code apt-cache}. Com a busca realizada no {\code apt}, a busca pelo pacote {\code bash} foi a mais bem sucedida, posicionando o pacote desejado na $6ª$ posição, porém teve resultados terríveis quando observado a busca pelos pacotes {\code sed} e {\code tar}, onde ambos apareciam na lista, após a $10.000ª$ posição
 
