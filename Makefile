@@ -76,3 +76,13 @@ dist: clean
 
 dist-clean: clean
 	rm -f $(PDF_FILE) $(TARGET)
+
+teste:
+	@python editaveis/prototipos/prototipo_apt.py >&2 echo "error"
+	# @python editaveis/prototipos/prototipo_yum.py
+	@python editaveis/prototipos/exact.py git >&2 echo "error"
+	@python editaveis/prototipos/protoLevenshtein.py git >&2 echo "error"
+	@python editaveis/prototipos/protoDamerauLevenshtein.py git >&2 echo "error"
+	@python editaveis/prototipos/protoSmith.py git >&2 echo "error"
+	
+	
