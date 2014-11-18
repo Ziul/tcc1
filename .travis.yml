@@ -9,7 +9,11 @@ install:
   - sudo apt-get install python-levenshtein
   - sudo pip install swalign
 script:
-  - make teste
+  	- python editaveis/prototipos/prototipo_apt.py
+	- python editaveis/prototipos/exact.py git
+	- python editaveis/prototipos/protoLevenshtein.py git
+	- python editaveis/prototipos/protoDamerauLevenshtein.py git
+	- python editaveis/prototipos/protoSmith.py git
 
 notifications:
   - email: false
