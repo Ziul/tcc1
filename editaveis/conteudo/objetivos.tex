@@ -14,8 +14,7 @@ Este trabalho tem como objetivo apresentar  métodos de qualificação dos resul
 %% Há a possibilidade de inserção do código de ordenação inicialmente  em {cmdline/apt-cache.cc}, influenciando diretamente o apt-cache. Há uma brecha para um patch em {apt-private/private-search} onde há um FIXME: SORT! na busca de ordenação alfabetica, por status, etc.
 
 \begin{itemize}
-	\item Estudo de algoritmos de \textit{string matching} que venham a qualificar a saída apresentada em uma busca por pacotes.
-	\item Apresentar soluções que venham a ampliar a qualidade apresentada na busca por pacotes nos gerenciadores e tornando-os menos dependentes de ferramentas complementares como {\code grep}, {\code more} ou {\code less}.
-	\item Apresentar modelos que possibilitem a apresentação de resultados de uma busca por pacotes, mesmo quando inserido o nome de um pacote inexistente ou com erros ortográficos.
-	\item Reduzir a necessidade do uso de rotinas de \textit{regex} por parte do usuário para a localização de pacotes dentre uma lista de resultados obtidos pelo gerenciador.
+	\item Implementar ou usar bibliotecas que implementam algoritmos de \textit{string matching} que venham a qualificar a saída apresentada em uma busca por pacotes.
+	\item Implementar protótipos de qualificação da saída das buscas que torne a localização dos pacotes desejados menos dependentes de ferramentas complementares como {\code grep}, {\code more} ou {\code less}.
+	\item Implementar protópios que possibilitem a apresentação de resultados de uma busca por pacotes, mesmo quando inserido o nome de um pacote inexistente ou com erros ortográficos.
 \end{itemize}
