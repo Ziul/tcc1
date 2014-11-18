@@ -6,7 +6,7 @@ install:
   # - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra
   # - sudo apt-get install texlive-latex-recommended texlive-latex-extra
   - sudo pip install pyxdameraulevenshtein
-  - sudo pip install Levenshtein
+  - sudo apt-get install python-levenshtein
   - sudo pip install swalign
 script:
   - make teste
