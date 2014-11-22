@@ -1,0 +1,33 @@
+<map id="apt&#45;pkg/pkgcache.h" name="apt&#45;pkg/pkgcache.h">
+<area shape="rect" id="node2" href="$acquire-item_8h.xhtml" title="apt&#45;pkg/acquire&#45;item.h" alt="" coords="2551,528,2701,555"/>
+<area shape="rect" id="node3" href="$algorithms_8h_source.xhtml" title="apt&#45;pkg/algorithms.h" alt="" coords="430,453,569,480"/>
+<area shape="rect" id="node4" href="$cachefile_8h_source.xhtml" title="apt&#45;pkg/cachefile.h" alt="" coords="409,528,540,555"/>
+<area shape="rect" id="node5" href="$cacheset_8h.xhtml" title="apt&#45;pkg/cacheset.h" alt="" coords="251,603,384,629"/>
+<area shape="rect" id="node6" href="$edsp_8h.xhtml" title="apt&#45;pkg/edsp.h" alt="" coords="133,677,240,704"/>
+<area shape="rect" id="node7" href="$cachefilter_8h.xhtml" title="apt&#45;pkg/cachefilter.h" alt="" coords="582,155,721,181"/>
+<area shape="rect" id="node8" href="$cacheiterators_8h_source.xhtml" title="apt&#45;pkg/cacheiterators.h" alt="" coords="1244,80,1407,107"/>
+<area shape="rect" id="node9" href="$debindexfile_8h_source.xhtml" title="apt&#45;pkg/deb/debindexfile.h" alt="" coords="1566,229,1740,256"/>
+<area shape="rect" id="node10" href="$debsystem_8h_source.xhtml" title="apt&#45;pkg/deb/debsystem.h" alt="" coords="810,304,979,331"/>
+<area shape="rect" id="node11" href="$depcache_8h_source.xhtml" title="apt&#45;pkg/depcache.h" alt="" coords="797,155,932,181"/>
+<area shape="rect" id="node12" href="$packagemanager_8h_source.xhtml" title="apt&#45;pkg/packagemanager.h" alt="" coords="473,379,652,405"/>
+<area shape="rect" id="node13" href="$dpkgpm_8h_source.xhtml" title="apt&#45;pkg/deb/dpkgpm.h" alt="" coords="1010,453,1160,480"/>
+<area shape="rect" id="node14" href="$pkgsystem_8h_source.xhtml" title="apt&#45;pkg/pkgsystem.h" alt="" coords="856,229,1000,256"/>
+<area shape="rect" id="node15" href="$edspsystem_8h_source.xhtml" title="apt&#45;pkg/edsp/edspsystem.h" alt="" coords="1003,304,1185,331"/>
+<area shape="rect" id="node19" href="$metaindex_8h_source.xhtml" title="apt&#45;pkg/metaindex.h" alt="" coords="1709,379,1848,405"/>
+<area shape="rect" id="node20" href="$sourcelist_8h_source.xhtml" title="apt&#45;pkg/sourcelist.h" alt="" coords="1605,453,1740,480"/>
+<area shape="rect" id="node21" href="$policy_8h_source.xhtml" title="apt&#45;pkg/policy.h" alt="" coords="296,229,411,256"/>
+<area shape="rect" id="node22" href="$indexfile_8h_source.xhtml" title="apt&#45;pkg/indexfile.h" alt="" coords="2225,155,2353,181"/>
+<area shape="rect" id="node23" href="$deblistparser_8h_source.xhtml" title="apt&#45;pkg/deb/deblistparser.h" alt="" coords="1816,229,1995,256"/>
+<area shape="rect" id="node24" href="$debrecords_8h_source.xhtml" title="apt&#45;pkg/deb/debrecords.h" alt="" coords="2653,229,2821,256"/>
+<area shape="rect" id="node26" href="$edsplistparser_8h_source.xhtml" title="apt&#45;pkg/edsp/edsplistparser.h" alt="" coords="2019,229,2212,256"/>
+<area shape="rect" id="node27" href="$orderlist_8h_source.xhtml" title="apt&#45;pkg/orderlist.h" alt="" coords="1566,155,1692,181"/>
+<area shape="rect" id="node28" href="$pkgcachegen_8h_source.xhtml" title="apt&#45;pkg/pkgcachegen.h" alt="" coords="1869,155,2027,181"/>
+<area shape="rect" id="node29" href="$versionmatch_8h_source.xhtml" title="apt&#45;pkg/versionmatch.h" alt="" coords="347,155,505,181"/>
+<area shape="rect" id="node30" href="$clean_8h_source.xhtml" title="apt&#45;pkg/clean.h" alt="" coords="2769,80,2879,107"/>
+<area shape="rect" id="node31" href="$indexrecords_8h_source.xhtml" title="apt&#45;pkg/indexrecords.h" alt="" coords="2948,304,3101,331"/>
+<area shape="rect" id="node32" href="$pkgrecords_8h_source.xhtml" title="apt&#45;pkg/pkgrecords.h" alt="" coords="2441,80,2585,107"/>
+<area shape="rect" id="node16" href="$init_8h_source.xhtml" title="apt&#45;pkg/init.h" alt="" coords="689,304,785,331"/>
+<area shape="rect" id="node17" href="$cdrom_8h_source.xhtml" title="apt&#45;pkg/cdrom.h" alt="" coords="727,379,843,405"/>
+<area shape="rect" id="node18" href="$debmetaindex_8h_source.xhtml" title="apt&#45;pkg/deb/debmetaindex.h" alt="" coords="1580,528,1767,555"/>
+<area shape="rect" id="node25" href="$edspindexfile_8h_source.xhtml" title="apt&#45;pkg/edsp/edspindexfile.h" alt="" coords="2237,229,2424,256"/>
+</map>

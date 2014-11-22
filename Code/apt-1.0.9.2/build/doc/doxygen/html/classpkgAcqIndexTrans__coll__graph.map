@@ -1,0 +1,15 @@
+<map id="pkgAcqIndexTrans" name="pkgAcqIndexTrans">
+<area shape="rect" id="node2" href="$classpkgAcqIndex.xhtml" title="An acquire item that is responsible for fetching an index {{{ file (e.g., Packages or Sources)..." alt="" coords="700,448,799,475"/>
+<area shape="rect" id="node3" href="$classpkgAcquire_1_1Item.xhtml" title="Represents the process by which a pkgAcquire object should {{{ retrieve a file or a collection of fil..." alt="" coords="201,212,249,239"/>
+<area shape="rect" id="node8" href="$structpkgAcquire_1_1ItemDesc.xhtml" title="Represents a single download source from which an item should be downloaded. " alt="" coords="346,327,424,353"/>
+<area shape="rect" id="node4" href="$classWeakPointable.xhtml" title="WeakPointable" alt="" coords="170,83,280,109"/>
+<area shape="rect" id="node11" href="$classpkgAcquire_1_1Worker.xhtml" title="A fetch subprocess. " alt="" coords="440,631,504,657"/>
+<area shape="rect" id="node5" href="$classpkgAcquire.xhtml" title="The core download scheduler. {{{. " alt="" coords="627,723,713,749"/>
+<area shape="rect" id="node6" href="$classpkgAcquire_1_1Queue.xhtml" title="A single download queue in a pkgAcquire object. {{{. " alt="" coords="547,539,607,565"/>
+<area shape="rect" id="node7" href="$structpkgAcquire_1_1Queue_1_1QItem.xhtml" title="A single item placed in this queue. " alt="" coords="356,448,413,475"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="609,83,663,109"/>
+<area shape="rect" id="node12" href="$structpkgAcquire_1_1MethodConfig.xhtml" title="Information about the properties of a single acquire method. {{{. " alt="" coords="937,539,1039,565"/>
+<area shape="rect" id="node16" href="$classHashString.xhtml" title="HashString" alt="" coords="694,273,780,300"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="565,5,705,32"/>
+<area shape="rect" id="node13" href="$classpkgAcquireStatus.xhtml" title="A monitor object for downloads controlled by the pkgAcquire class. {{{. " alt="" coords="632,539,757,565"/>
+</map>

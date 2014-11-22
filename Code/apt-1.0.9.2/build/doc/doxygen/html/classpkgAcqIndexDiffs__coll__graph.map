@@ -1,0 +1,15 @@
+<map id="pkgAcqIndexDiffs" name="pkgAcqIndexDiffs">
+<area shape="rect" id="node2" href="$classpkgAcquire_1_1Item.xhtml" title="Represents the process by which a pkgAcquire object should {{{ retrieve a file or a collection of fil..." alt="" coords="893,212,941,239"/>
+<area shape="rect" id="node7" href="$structpkgAcquire_1_1ItemDesc.xhtml" title="Represents a single download source from which an item should be downloaded. " alt="" coords="506,343,584,369"/>
+<area shape="rect" id="node3" href="$classWeakPointable.xhtml" title="WeakPointable" alt="" coords="866,83,976,109"/>
+<area shape="rect" id="node10" href="$classpkgAcquire_1_1Worker.xhtml" title="A fetch subprocess. " alt="" coords="645,647,709,673"/>
+<area shape="rect" id="node4" href="$classpkgAcquire.xhtml" title="The core download scheduler. {{{. " alt="" coords="982,739,1068,765"/>
+<area shape="rect" id="node5" href="$classpkgAcquire_1_1Queue.xhtml" title="A single download queue in a pkgAcquire object. {{{. " alt="" coords="319,555,379,581"/>
+<area shape="rect" id="node6" href="$structpkgAcquire_1_1Queue_1_1QItem.xhtml" title="A single item placed in this queue. " alt="" coords="499,464,556,491"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="434,83,488,109"/>
+<area shape="rect" id="node11" href="$structpkgAcquire_1_1MethodConfig.xhtml" title="Information about the properties of a single acquire method. {{{. " alt="" coords="806,555,908,581"/>
+<area shape="rect" id="node16" href="$structDiffInfo.xhtml" title="Information about an index patch (aka diff). " alt="" coords="163,212,228,239"/>
+<area shape="rect" id="node17" href="$classHashString.xhtml" title="HashString" alt="" coords="226,281,312,308"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="391,5,531,32"/>
+<area shape="rect" id="node12" href="$classpkgAcquireStatus.xhtml" title="A monitor object for downloads controlled by the pkgAcquire class. {{{. " alt="" coords="1041,555,1167,581"/>
+</map>

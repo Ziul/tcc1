@@ -1,0 +1,19 @@
+<map id="apt&#45;pkg/edsp.h" name="apt&#45;pkg/edsp.h">
+<area shape="rect" id="node2" href="$cacheset_8h.xhtml" title="apt&#45;pkg/cacheset.h" alt="" coords="2911,80,3044,107"/>
+<area shape="rect" id="node11" href="$pkgcache_8h.xhtml" title="pkgCache &#45; Structure definitions for the cache file " alt="" coords="2131,603,2265,629"/>
+<area shape="rect" id="node15" href="$cacheiterators_8h_source.xhtml" title="apt&#45;pkg/cacheiterators.h" alt="" coords="1445,677,1608,704"/>
+<area shape="rect" id="node19" href="$depcache_8h_source.xhtml" title="apt&#45;pkg/depcache.h" alt="" coords="2692,528,2827,555"/>
+<area shape="rect" id="node18" href="$cachefile_8h_source.xhtml" title="apt&#45;pkg/cachefile.h" alt="" coords="2459,155,2591,181"/>
+<area shape="rect" id="node25" href="$acquire_8h.xhtml" title="apt&#45;pkg/acquire.h" alt="" coords="457,528,580,555"/>
+<area shape="rect" id="node30" href="$policy_8h_source.xhtml" title="apt&#45;pkg/policy.h" alt="" coords="953,453,1068,480"/>
+<area shape="rect" id="node32" href="$sourcelist_8h_source.xhtml" title="apt&#45;pkg/sourcelist.h" alt="" coords="2333,229,2468,256"/>
+<area shape="rect" id="node31" href="$versionmatch_8h_source.xhtml" title="apt&#45;pkg/versionmatch.h" alt="" coords="909,528,1067,555"/>
+<area shape="rect" id="node33" href="$tagfile_8h_source.xhtml" title="apt&#45;pkg/tagfile.h" alt="" coords="2715,304,2829,331"/>
+<area shape="rect" id="node36" href="$metaindex_8h_source.xhtml" title="apt&#45;pkg/metaindex.h" alt="" coords="1747,304,1887,331"/>
+<area shape="rect" id="node37" href="$indexfile_8h_source.xhtml" title="apt&#45;pkg/indexfile.h" alt="" coords="1621,453,1749,480"/>
+<area shape="rect" id="node38" href="$srcrecords_8h_source.xhtml" title="apt&#45;pkg/srcrecords.h" alt="" coords="1615,528,1755,555"/>
+<area shape="rect" id="node39" href="$pkgrecords_8h_source.xhtml" title="apt&#45;pkg/pkgrecords.h" alt="" coords="1345,528,1489,555"/>
+<area shape="rect" id="node40" href="$init_8h_source.xhtml" title="apt&#45;pkg/init.h" alt="" coords="2081,379,2177,405"/>
+<area shape="rect" id="node42" href="$vendor_8h_source.xhtml" title="apt&#45;pkg/vendor.h" alt="" coords="1882,379,2000,405"/>
+<area shape="rect" id="node41" href="$pkgsystem_8h_source.xhtml" title="apt&#45;pkg/pkgsystem.h" alt="" coords="2021,453,2165,480"/>
+</map>

@@ -1,0 +1,6 @@
+apt-inst/dirstream.cc
+apt-inst/extract.cc
+apt-inst/filelist.cc
+apt-inst/contrib/arfile.cc
+apt-inst/contrib/extracttar.cc
+apt-inst/deb/debfile.cc

@@ -1,0 +1,28 @@
+<map id="pkgDPkgPM" name="pkgDPkgPM">
+<area shape="rect" id="node2" href="$classpkgPackageManager.xhtml" title="pkgPackageManager" alt="" coords="2019,765,2163,792"/>
+<area shape="rect" id="node3" href="$classpkgCache_1_1Namespace.xhtml" title="Namespace" alt="" coords="1315,735,1407,761"/>
+<area shape="rect" id="node4" href="$classpkgOrderList.xhtml" title="pkgOrderList" alt="" coords="1840,824,1936,851"/>
+<area shape="rect" id="node5" href="$classpkgDepCache.xhtml" title="pkgDepCache" alt="" coords="1635,661,1741,688"/>
+<area shape="rect" id="node6" href="$classpkgDepCache_1_1Policy.xhtml" title="Policy" alt="" coords="1332,520,1391,547"/>
+<area shape="rect" id="node7" href="$classpkgCache.xhtml" title="pkgCache" alt="" coords="1321,571,1402,597"/>
+<area shape="rect" id="node8" href="$structpkgCache_1_1Dependency.xhtml" title="information for a single dependency record " alt="" coords="993,647,1087,673"/>
+<area shape="rect" id="node9" href="$structpkgCache_1_1Description.xhtml" title="datamember of a linked list of available description for a version " alt="" coords="996,697,1084,724"/>
+<area shape="rect" id="node10" href="$structpkgCache_1_1Header.xhtml" title="Header" alt="" coords="1008,748,1072,775"/>
+<area shape="rect" id="node11" href="$structDynamicMMap_1_1Pool.xhtml" title="Pool" alt="" coords="676,748,724,775"/>
+<area shape="rect" id="node12" href="$structpkgCache_1_1PackageFile.xhtml" title="stores information about the files used to generate the cache " alt="" coords="993,799,1087,825"/>
+<area shape="rect" id="node13" href="$structpkgCache_1_1DescFile.xhtml" title="associates a description with a Translation file " alt="" coords="1003,849,1077,876"/>
+<area shape="rect" id="node14" href="$structpkgCache_1_1StringItem.xhtml" title="used for generating single instances of strings " alt="" coords="999,152,1081,179"/>
+<area shape="rect" id="node15" href="$structpkgCache_1_1Provides.xhtml" title="handles virtual packages " alt="" coords="1003,203,1077,229"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="317,825,371,852"/>
+<area shape="rect" id="node24" href="$classFileFd.xhtml" title="FileFd" alt="" coords="671,647,729,673"/>
+<area shape="rect" id="node28" href="$structpkgDPkgPM_1_1Item.xhtml" title="Item" alt="" coords="676,1053,724,1080"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="5,825,147,852"/>
+<area shape="rect" id="node18" href="$structpkgCache_1_1Group.xhtml" title="groups architecture depending packages together " alt="" coords="1011,253,1069,280"/>
+<area shape="rect" id="node19" href="$classpkgVersioningSystem.xhtml" title="pkgVersioningSystem" alt="" coords="965,343,1115,369"/>
+<area shape="rect" id="node20" href="$structpkgCache_1_1Version.xhtml" title="information for a single version of a package " alt="" coords="1007,393,1073,420"/>
+<area shape="rect" id="node21" href="$structpkgCache_1_1VerFile.xhtml" title="associates a version with a PackageFile " alt="" coords="1009,444,1071,471"/>
+<area shape="rect" id="node22" href="$structpkgCache_1_1Package.xhtml" title="contains information for a single unique package " alt="" coords="1003,495,1077,521"/>
+<area shape="rect" id="node23" href="$classMMap.xhtml" title="MMap" alt="" coords="1011,596,1069,623"/>
+<area shape="rect" id="node25" href="$structpkgDepCache_1_1StateCache.xhtml" title="StateCache" alt="" coords="1316,657,1407,684"/>
+<area shape="rect" id="node31" href="$structpkgDPkgPM_1_1DpkgState.xhtml" title="DpkgState" alt="" coords="34,12,118,39"/>
+</map>

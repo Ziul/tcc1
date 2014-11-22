@@ -22,3 +22,8 @@
 *.pyc
 *.lol
 srcs/
+
+#libs and codes
+*.pyc
+*.o
+*.a

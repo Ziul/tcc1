@@ -1,0 +1,4 @@
+<map id="pkgAcquire::Queue::QItem" name="pkgAcquire::Queue::QItem">
+<area shape="rect" id="node2" href="$structpkgAcquire_1_1ItemDesc.xhtml" title="Represents a single download source from which an item should be downloaded. " alt="" coords="35,80,113,107"/>
+<area shape="rect" id="node3" href="$classWeakPointable.xhtml" title="WeakPointable" alt="" coords="19,5,129,32"/>
+</map>

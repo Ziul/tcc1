@@ -1,0 +1,27 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classAPT_1_1PackageContainerInterface_1_1const__iterator.xhtml" title="PackageContainerInterface\l::const_iterator" alt="" coords="6,38,186,79"/>
+<area shape="rect" id="node2" href="$classAPT_1_1PackageContainer_1_1const__iterator.xhtml" title="smell like a pkgCache::PkgIterator " alt="" coords="241,5,439,46"/>
+<area shape="rect" id="node3" href="$classAPT_1_1PackageContainer_1_1iterator.xhtml" title="PackageContainer\&lt; Container\l \&gt;::iterator" alt="" coords="241,70,439,111"/>
+<area shape="rect" id="node4" href="$classAPT_1_1VersionContainerInterface_1_1const__iterator.xhtml" title="smell like a pkgCache::VerIterator " alt="" coords="9,169,183,210"/>
+<area shape="rect" id="node5" href="$classAPT_1_1VersionContainer_1_1const__iterator.xhtml" title="smell like a pkgCache::VerIterator " alt="" coords="245,135,435,177"/>
+<area shape="rect" id="node6" href="$classAPT_1_1VersionContainer_1_1iterator.xhtml" title="VersionContainer\&lt; Container\l \&gt;::iterator" alt="" coords="245,201,435,242"/>
+<area shape="rect" id="node8" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; Dependency, DepIterator \&gt;" alt="" coords="244,397,436,438"/>
+<area shape="rect" id="node10" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; DescFile, DescFileIterator \&gt;" alt="" coords="241,462,439,503"/>
+<area shape="rect" id="node12" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; Description, DescIterator \&gt;" alt="" coords="244,527,436,569"/>
+<area shape="rect" id="node14" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; Group, GrpIterator \&gt;" alt="" coords="265,593,415,634"/>
+<area shape="rect" id="node16" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; Package, PkgIterator \&gt;" alt="" coords="255,658,425,699"/>
+<area shape="rect" id="node18" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; PackageFile, PkgFileIterator \&gt;" alt="" coords="235,723,445,765"/>
+<area shape="rect" id="node20" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; Provides, PrvIterator \&gt;" alt="" coords="257,789,423,830"/>
+<area shape="rect" id="node22" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; VerFile, VerFileIterator \&gt;" alt="" coords="251,854,429,895"/>
+<area shape="rect" id="node24" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; Version, VerIterator \&gt;" alt="" coords="261,266,419,307"/>
+<area shape="rect" id="node26" href="$classpkgCache_1_1Iterator.xhtml" title="pkgCache::Iterator\l\&lt; Str, Itr \&gt;" alt="" coords="275,331,405,373"/>
+<area shape="rect" id="node9" href="$classpkgCache_1_1DepIterator.xhtml" title="pkgCache::DepIterator" alt="" coords="508,404,663,431"/>
+<area shape="rect" id="node11" href="$classpkgCache_1_1DescFileIterator.xhtml" title="pkgCache::DescFileIterator" alt="" coords="494,469,677,496"/>
+<area shape="rect" id="node13" href="$classpkgCache_1_1DescIterator.xhtml" title="pkgCache::DescIterator" alt="" coords="505,535,666,561"/>
+<area shape="rect" id="node15" href="$classpkgCache_1_1GrpIterator.xhtml" title="pkgCache::GrpIterator" alt="" coords="510,600,661,627"/>
+<area shape="rect" id="node17" href="$classpkgCache_1_1PkgIterator.xhtml" title="pkgCache::PkgIterator" alt="" coords="509,665,662,692"/>
+<area shape="rect" id="node19" href="$classpkgCache_1_1PkgFileIterator.xhtml" title="pkgCache::PkgFileIterator" alt="" coords="498,731,673,757"/>
+<area shape="rect" id="node21" href="$classpkgCache_1_1PrvIterator.xhtml" title="pkgCache::PrvIterator" alt="" coords="510,796,661,823"/>
+<area shape="rect" id="node23" href="$classpkgCache_1_1VerFileIterator.xhtml" title="pkgCache::VerFileIterator" alt="" coords="500,861,671,888"/>
+<area shape="rect" id="node25" href="$classpkgCache_1_1VerIterator.xhtml" title="pkgCache::VerIterator" alt="" coords="510,273,661,300"/>
+</map>

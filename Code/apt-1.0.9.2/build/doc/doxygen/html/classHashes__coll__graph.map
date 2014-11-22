@@ -1,0 +1,8 @@
+<map id="Hashes" name="Hashes">
+<area shape="rect" id="node2" href="$classSHA1Summation.xhtml" title="SHA1Summation" alt="" coords="5,133,128,160"/>
+<area shape="rect" id="node3" href="$classSummationImplementation.xhtml" title="SummationImplementation" alt="" coords="118,5,295,32"/>
+<area shape="rect" id="node5" href="$classSHA2SummationBase.xhtml" title="SHA2SummationBase" alt="" coords="130,83,283,109"/>
+<area shape="rect" id="node7" href="$classMD5Summation.xhtml" title="MD5Summation" alt="" coords="350,133,465,160"/>
+<area shape="rect" id="node4" href="$classSHA256Summation.xhtml" title="SHA256Summation" alt="" coords="110,184,247,211"/>
+<area shape="rect" id="node6" href="$classSHA512Summation.xhtml" title="SHA512Summation" alt="" coords="271,184,408,211"/>
+</map>

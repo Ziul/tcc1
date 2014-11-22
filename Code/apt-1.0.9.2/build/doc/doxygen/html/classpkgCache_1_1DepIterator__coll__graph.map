@@ -1,0 +1,21 @@
+<map id="pkgCache::DepIterator" name="pkgCache::DepIterator">
+<area shape="rect" id="node2" href="$classpkgCache_1_1Iterator.xhtml" title="Iterator\&lt; Dependency,\l DepIterator \&gt;" alt="" coords="1147,65,1299,106"/>
+<area shape="rect" id="node4" href="$structpkgCache_1_1Dependency.xhtml" title="information for a single dependency record " alt="" coords="625,80,719,107"/>
+<area shape="rect" id="node5" href="$classpkgCache.xhtml" title="pkgCache" alt="" coords="922,392,1003,419"/>
+<area shape="rect" id="node6" href="$structpkgCache_1_1Description.xhtml" title="datamember of a linked list of available description for a version " alt="" coords="628,139,716,165"/>
+<area shape="rect" id="node7" href="$structpkgCache_1_1Header.xhtml" title="Header" alt="" coords="640,189,704,216"/>
+<area shape="rect" id="node8" href="$structDynamicMMap_1_1Pool.xhtml" title="Pool" alt="" coords="429,189,477,216"/>
+<area shape="rect" id="node9" href="$structpkgCache_1_1PackageFile.xhtml" title="stores information about the files used to generate the cache " alt="" coords="625,240,719,267"/>
+<area shape="rect" id="node10" href="$structpkgCache_1_1DescFile.xhtml" title="associates a description with a Translation file " alt="" coords="635,291,709,317"/>
+<area shape="rect" id="node11" href="$structpkgCache_1_1StringItem.xhtml" title="used for generating single instances of strings " alt="" coords="631,341,713,368"/>
+<area shape="rect" id="node12" href="$structpkgCache_1_1Provides.xhtml" title="handles virtual packages " alt="" coords="635,392,709,419"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="198,468,253,495"/>
+<area shape="rect" id="node21" href="$classFileFd.xhtml" title="FileFd" alt="" coords="424,493,483,520"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="5,468,147,495"/>
+<area shape="rect" id="node15" href="$structpkgCache_1_1Group.xhtml" title="groups architecture depending packages together " alt="" coords="643,544,701,571"/>
+<area shape="rect" id="node16" href="$classpkgVersioningSystem.xhtml" title="pkgVersioningSystem" alt="" coords="597,633,747,660"/>
+<area shape="rect" id="node17" href="$structpkgCache_1_1Version.xhtml" title="information for a single version of a package " alt="" coords="639,684,705,711"/>
+<area shape="rect" id="node18" href="$structpkgCache_1_1VerFile.xhtml" title="associates a version with a PackageFile " alt="" coords="641,735,703,761"/>
+<area shape="rect" id="node19" href="$structpkgCache_1_1Package.xhtml" title="contains information for a single unique package " alt="" coords="635,785,709,812"/>
+<area shape="rect" id="node20" href="$classMMap.xhtml" title="MMap" alt="" coords="643,493,701,520"/>
+</map>

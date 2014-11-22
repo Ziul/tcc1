@@ -1,0 +1,17 @@
+<map id="WeakPointable" name="WeakPointable">
+<area shape="rect" id="node2" href="$classpkgAcquire_1_1Item.xhtml" title="Represents the process by which a pkgAcquire object should {{{ retrieve a file or a collection of fil..." alt="" coords="181,233,229,260"/>
+<area shape="rect" id="node14" href="$structpkgAcquire_1_1ItemDesc.xhtml" title="Represents a single download source from which an item should be downloaded. " alt="" coords="166,360,245,387"/>
+<area shape="rect" id="node16" href="$classpkgAcquire_1_1Worker.xhtml" title="A fetch subprocess. " alt="" coords="173,411,237,437"/>
+<area shape="rect" id="node3" href="$classpkgAcqArchive.xhtml" title="An item that is responsible for fetching a package file. {{{. " alt="" coords="319,5,430,32"/>
+<area shape="rect" id="node4" href="$classpkgAcqDiffIndex.xhtml" title="An item that is responsible for fetching an index file of {{{ package list diffs and starting the pac..." alt="" coords="315,56,434,83"/>
+<area shape="rect" id="node5" href="$classpkgAcqFile.xhtml" title="Retrieve an arbitrary file to the current directory. {{{. " alt="" coords="331,107,418,133"/>
+<area shape="rect" id="node6" href="$classpkgAcqIndex.xhtml" title="An acquire item that is responsible for fetching an index {{{ file (e.g., Packages or Sources)..." alt="" coords="325,157,424,184"/>
+<area shape="rect" id="node8" href="$classpkgAcqIndexDiffs.xhtml" title="An item that is responsible for fetching server&#45;merge patches {{{ that need to be applied to a given ..." alt="" coords="311,208,438,235"/>
+<area shape="rect" id="node9" href="$classpkgAcqIndexMergeDiffs.xhtml" title="An item that is responsible for fetching client&#45;merge patches {{{ that need to be applied to a given ..." alt="" coords="293,259,456,285"/>
+<area shape="rect" id="node10" href="$classpkgAcqMetaIndex.xhtml" title="An item that is responsible for downloading the meta&#45;index {{{ file (i.e., Release) itself and verify..." alt="" coords="311,309,438,336"/>
+<area shape="rect" id="node12" href="$classpkgAcqMetaSig.xhtml" title="An acquire item that downloads the detached signature {{{ of a meta&#45;index (Release) file..." alt="" coords="317,360,432,387"/>
+<area shape="rect" id="node13" href="$classpkgAcqSubIndex.xhtml" title="An item that is responsible for fetching a SubIndex {{{. " alt="" coords="314,411,435,437"/>
+<area shape="rect" id="node7" href="$classpkgAcqIndexTrans.xhtml" title="An acquire item that is responsible for fetching a {{{ translated index file. " alt="" coords="512,157,643,184"/>
+<area shape="rect" id="node11" href="$classpkgAcqMetaClearSig.xhtml" title="An item repsonsible for downloading clearsigned metaindexes {{{. " alt="" coords="505,309,650,336"/>
+<area shape="rect" id="node15" href="$structpkgAcquire_1_1Queue_1_1QItem.xhtml" title="A single item placed in this queue. " alt="" coords="345,461,404,488"/>
+</map>

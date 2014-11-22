@@ -1,0 +1,16 @@
+apt-private/acqprogress.cc
+apt-private/private-cachefile.cc
+apt-private/private-cacheset.cc
+apt-private/private-cmndline.cc
+apt-private/private-download.cc
+apt-private/private-install.cc
+apt-private/private-list.cc
+apt-private/private-main.cc
+apt-private/private-moo.cc
+apt-private/private-output.cc
+apt-private/private-search.cc
+apt-private/private-show.cc
+apt-private/private-sources.cc
+apt-private/private-update.cc
+apt-private/private-upgrade.cc
+apt-private/private-utils.cc

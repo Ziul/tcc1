@@ -1,0 +1,12 @@
+<map id="pkgAcquire::Item" name="pkgAcquire::Item">
+<area shape="rect" id="node6" href="$structpkgAcquire_1_1ItemDesc.xhtml" title="Represents a single download source from which an item should be downloaded. " alt="" coords="309,324,387,351"/>
+<area shape="rect" id="node2" href="$classWeakPointable.xhtml" title="WeakPointable" alt="" coords="211,83,321,109"/>
+<area shape="rect" id="node9" href="$classpkgAcquire_1_1Worker.xhtml" title="A fetch subprocess. " alt="" coords="551,628,615,655"/>
+<area shape="rect" id="node3" href="$classpkgAcquire.xhtml" title="The core download scheduler. {{{. " alt="" coords="734,720,820,747"/>
+<area shape="rect" id="node4" href="$classpkgAcquire_1_1Queue.xhtml" title="A single download queue in a pkgAcquire object. {{{. " alt="" coords="666,536,725,563"/>
+<area shape="rect" id="node5" href="$structpkgAcquire_1_1Queue_1_1QItem.xhtml" title="A single item placed in this queue. " alt="" coords="331,445,388,472"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="563,83,617,109"/>
+<area shape="rect" id="node10" href="$structpkgAcquire_1_1MethodConfig.xhtml" title="Information about the properties of a single acquire method. {{{. " alt="" coords="750,536,852,563"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="520,5,660,32"/>
+<area shape="rect" id="node11" href="$classpkgAcquireStatus.xhtml" title="A monitor object for downloads controlled by the pkgAcquire class. {{{. " alt="" coords="976,536,1101,563"/>
+</map>

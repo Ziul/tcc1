@@ -1,0 +1,5 @@
+<map id="pkgAcqIndex" name="pkgAcqIndex">
+<area shape="rect" id="node4" href="$classpkgAcqIndexTrans.xhtml" title="An acquire item that is responsible for fetching a {{{ translated index file. " alt="" coords="4,229,133,256"/>
+<area shape="rect" id="node2" href="$classpkgAcquire_1_1Item.xhtml" title="Represents the process by which a pkgAcquire object should {{{ retrieve a file or a collection of fil..." alt="" coords="45,80,93,107"/>
+<area shape="rect" id="node3" href="$classWeakPointable.xhtml" title="WeakPointable" alt="" coords="14,5,124,32"/>
+</map>

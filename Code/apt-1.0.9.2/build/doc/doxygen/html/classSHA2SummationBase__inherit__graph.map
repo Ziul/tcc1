@@ -1,0 +1,5 @@
+<map id="SHA2SummationBase" name="SHA2SummationBase">
+<area shape="rect" id="node3" href="$classSHA256Summation.xhtml" title="SHA256Summation" alt="" coords="5,155,141,181"/>
+<area shape="rect" id="node4" href="$classSHA512Summation.xhtml" title="SHA512Summation" alt="" coords="166,155,303,181"/>
+<area shape="rect" id="node2" href="$classSummationImplementation.xhtml" title="SummationImplementation" alt="" coords="65,5,241,32"/>
+</map>

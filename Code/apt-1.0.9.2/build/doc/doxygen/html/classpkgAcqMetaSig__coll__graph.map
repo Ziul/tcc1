@@ -1,0 +1,17 @@
+<map id="pkgAcqMetaSig" name="pkgAcqMetaSig">
+<area shape="rect" id="node2" href="$classpkgAcquire_1_1Item.xhtml" title="Represents the process by which a pkgAcquire object should {{{ retrieve a file or a collection of fil..." alt="" coords="260,225,308,252"/>
+<area shape="rect" id="node7" href="$structpkgAcquire_1_1ItemDesc.xhtml" title="Represents a single download source from which an item should be downloaded. " alt="" coords="340,352,418,379"/>
+<area shape="rect" id="node3" href="$classWeakPointable.xhtml" title="WeakPointable" alt="" coords="151,83,261,109"/>
+<area shape="rect" id="node10" href="$classpkgAcquire_1_1Worker.xhtml" title="A fetch subprocess. " alt="" coords="306,743,370,769"/>
+<area shape="rect" id="node4" href="$classpkgAcquire.xhtml" title="The core download scheduler. {{{. " alt="" coords="295,835,381,861"/>
+<area shape="rect" id="node5" href="$classpkgAcquire_1_1Queue.xhtml" title="A single download queue in a pkgAcquire object. {{{. " alt="" coords="542,651,601,677"/>
+<area shape="rect" id="node6" href="$structpkgAcquire_1_1Queue_1_1QItem.xhtml" title="A single item placed in this queue. " alt="" coords="350,525,408,552"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="812,83,866,109"/>
+<area shape="rect" id="node11" href="$structpkgAcquire_1_1MethodConfig.xhtml" title="Information about the properties of a single acquire method. {{{. " alt="" coords="678,651,780,677"/>
+<area shape="rect" id="node15" href="$classindexRecords.xhtml" title="indexRecords" alt="" coords="976,651,1078,677"/>
+<area shape="rect" id="node17" href="$structindexRecords_1_1checkSum.xhtml" title="checkSum" alt="" coords="1076,352,1160,379"/>
+<area shape="rect" id="node18" href="$classHashString.xhtml" title="HashString" alt="" coords="996,225,1082,252"/>
+<area shape="rect" id="node20" href="$classIndexTarget.xhtml" title="Information about an index file. " alt="" coords="1265,225,1356,252"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="769,5,909,32"/>
+<area shape="rect" id="node12" href="$classpkgAcquireStatus.xhtml" title="A monitor object for downloads controlled by the pkgAcquire class. {{{. " alt="" coords="74,651,200,677"/>
+</map>
