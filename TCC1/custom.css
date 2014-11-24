@@ -1,0 +1,73 @@
+/* We can customize the theme CSS here */
+
+/*@import url(../css_support/cabinsketch.css);*/
+/*@import url(../css_support/Dadhand.ttf);*/
+/*@import url(./Dadhand.ttf);*/
+
+/*@import url(https://s3.amazonaws.com/static.slid.es/fonts/cabinsketch/cabinsketch.css);*/
+
+body {
+    color: #000; /*Base font color*/
+    background-color: #fff; /* Colour outside of slide */
+    font-family:'Dadhand','Courier 10 Pitch', monospace
+}
+
+div.presentation, div.slide {
+  background-color: #fff; /* colour of the slide */
+}
+
+div.slide h1, div.slide h2, div.slide h3, div.slide h4, div.slide h5 {
+  color: #000;
+  font-weight: normal;
+  font-family:'Cabin Sketch', 'Eager Naturalist',  'Dadhand', sans-serif;
+}
+
+div.slide h1, div.slide h2{
+  text-align:center;
+  /*margin: 80px;*/
+}
+
+figure figcaption{
+ text-align:center; 
+ font-size:50%;
+}
+
+section{
+  font-size:60%;
+}
+
+img{
+  width:100%;
+}
+
+pre{
+  text-align:left; 
+}
+
+div.slide h6{
+  color: #000;
+  font-size:100%;
+  font-weight: normal;
+  text-align:left; 
+  font-family:'Dadhand', monospace;
+}
+
+sup{
+	color: #559;
+  /*background:#52a2df;*/
+	font-size:50%;
+	font-family:'Dadhand', monospace;
+  position: absolute;
+  bottom: 0;
+  width: 644px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+blockquote{
+ font-family:'Purisa', italic; 
+}
+
+a{
+  color: #000;
+}
